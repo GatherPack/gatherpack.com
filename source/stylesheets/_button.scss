@@ -1,0 +1,18 @@
+.button {
+  &:hover,
+  &:focus,
+  &:focus-within,
+  &:active {
+    transition: filter 250ms, color 200ms;
+    filter: saturate(1.3) brightness(120%);
+  }
+
+  &[disabled] {
+    filter: saturate(0.1) brightness(70%);
+    cursor: not-allowed;
+  }
+
+  &-fa {
+    padding: $size-7;
+  }
+}

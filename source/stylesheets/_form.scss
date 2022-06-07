@@ -1,0 +1,8 @@
+label {
+  @extend .label;
+}
+
+.form-actions {
+  @extend .buttons;
+  margin-top: $size-5;
+}
