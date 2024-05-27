@@ -17,6 +17,8 @@ $greige-darkest: #403a22;
 $primary: $greige-dark;
 $body-bg: $greige-light;
 
+$link-color: $greige-darkest;
+
 @import "bootstrap/variables";
 @import "bootstrap/variables-dark";
 @import "bootstrap/maps";
@@ -66,7 +68,7 @@ $body-bg: $greige-light;
 body {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   align-items: center;
   justify-content: center;
