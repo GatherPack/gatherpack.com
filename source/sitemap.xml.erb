@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <% sitemap.resources.filter { |r| r.path =~ /html/i }.each do |p| %>
+  <url>
+    <loc>https://gatherpack.com<%= p.url %></loc>
+    <lastmod><%= File.mtime(p.file_descriptor.full_path).strftime('%Y-%m-%dT%H:%M%:z') %></lastmod>
+  </url>
+  <% end %>
+</urlset> 
