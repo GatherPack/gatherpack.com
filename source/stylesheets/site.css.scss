@@ -16,6 +16,7 @@ $greige-darkest: #403a22;
 
 $primary: $greige-dark;
 $body-bg: $greige-light;
+$body-secondary-bg: $greige-dark;
 
 $link-color: $greige-darkest;
 
@@ -74,7 +75,7 @@ img {
   max-width: 100%;
 }
 
-svg {
+svg.svg-inline--fa {
   display: block;
   margin: auto;
 }
@@ -99,7 +100,8 @@ ul {
 }
 
 .card {
-  @extend .my-2;
+  @extend .mt-2;
+  @extend .mb-5;
   border: none;
 }
 
