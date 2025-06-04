@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang-"en">
   <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8HN3RXBS6B"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-8HN3RXBS6B');
-    </script>
     <title>GatherPack</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="GatherPack is an innovative, open-source software solution designed to help community-focused organizations manage their operations.">
@@ -23,11 +15,21 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <script defer data-domain="gatherpack.com" src="https://plausible.io/js/script.tagged-events.js"></script>
+    <script src="https://kit.fontawesome.com/78be1d5613.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
     <div class="container">
       <%= yield %>
     </div>
+
+    <footer>
+      <p>
+        Site by <a href="https://sledgehammerinfosystems.com/">Sledgehammer Infosystems</a>.
+      </p>
+      <a href="#" class="visually-hidden">Back to top</a>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
   </body>
 </html>

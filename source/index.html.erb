@@ -1,12 +1,189 @@
 <h1 class="logoline">Get Together with <%= image_tag( 'logo.svg', alt: 'GatherPack', class: 'logo') %> GatherPack</a></h1>
 
-<p class="lead mb-4 text-center">Participant Management | Time &amp; Attendance Tracking | Event Planning | Money Management</p>
+<p class="lead mb-4 text-center">People Management | Time &amp; Attendance Tracking | Event Planning | Money Management</p>
 
-<div class="mx-auto text-center">
-  <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-4">
-    <a href="https://github.com/GatherPack" target="_blank" class="btn btn-primary btn-lg px-4 gap-3">Check Us Out on GitHub</a>
-    <a href="https://discord.gg/r3fmNDVn3N" target="_blank" class="btn btn-primary btn-lg px-4 gap-3">Join the Discord Server</a>
-    <a href="https://calendly.com/sledgehammer/gatherpack-demo-discussion" target="_blank" class="btn btn-primary btn-lg px-4 gap-3">Schedule a Demo</a>
+<%= partial :beta_cta %>
+
+<div class="card mb-5">
+  <div class="card-header">
+    <h2>Happy GatherPackers</h2>
+  </div>
+  <div class="card-body">
+    <div class="row mx-3 my-3 align-items-center justify-content-center">
+      <div class="col-4 col-md-2 col-xl-1">
+        <a href="https://westside-robotics.info" target="_blank"><img src="/images/westsideRoboticsMark.png" alt="Westside Robotics logo"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card mb-5">
+  <div class="card-header">
+    <h2>Tools &amp; Features</h2>
+  </div>
+  <div class="card-body">
+    <div class="row align-items-center">
+      <div class="col-4 col-md-2">
+        <i class="fa-6x fa-fw fa-solid fa-person"></i>
+      </div>
+      <div class="col-8 col-md-4">
+        <h3>People</h3>
+        Keep track of everyone associated with your organization in one place, whether they have an account in the system or not.
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="row align-items-center my-3">
+          <div class="col-8 col-md-6 col-xl-9">
+            <h4>Teams</h4>
+            Group people together into different teams to manage their access to information and segment communication.
+          </div>
+          <div class="col-4 col-md-6 col-xl-3">
+            <i class="fa-4x fa-fw fa-solid fa-users"></i>
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-8 col-md-6 col-xl-9">
+            <h4>Badges</h4>
+            Assign badges to people to track their achievements - or just for fun!
+          </div>
+          <div class="col-4 col-md-6 col-xl-3">
+            <i class="fa-4x fa-fw fa-solid fa-certificate"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row align-items-center">
+      <div class="col-4 col-md-2">
+        <i class="fa-6x fa-fw fa-solid fa-comments"></i>
+      </div>
+      <div class="col-8 col-md-4">
+        <h3>Messaging</h3>
+        Manage inbound &amp; outbound communications via email, text, Slack, Discord, and more!
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="row align-items-center my-3">
+          <div class="col-8 col-md-6 col-xl-9">
+            <h4>Announcements</h4>
+            Post team-specific or site-wide announcements that can be scheduled to appear &amp; disappear as needed.
+          </div>
+          <div class="col-4 col-md-6 col-xl-3">
+            <i class="fa-4x fa-fw fa-solid fa-message"></i>
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-8 col-md-6 col-xl-9">
+            <h4>Notifications</h4>
+            Get automatically notified about anything and everything that you want that happens inside GatherPack.
+          </div>
+          <div class="col-4 col-md-6 col-xl-3">
+            <i class="fa-4x fa-fw fa-solid fa-envelope-open-text"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row align-items-center">
+      <div class="col-4 col-md-2">
+        <i class="fa-6x fa-fw fa-solid fa-money-bill"></i>
+      </div>
+      <div class="col-8 col-md-4">
+        <h3>Finance Tools</h3>
+        Simplify your life by tracking your organization's finances in the same place as the rest of your important information.
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="row align-items-center my-3">
+          <div class="col-8 col-md-6 col-xl-9">
+            <h4>Bookeeping</h4>
+            Keep your finances organized with our flexible transaction tagging system.
+          </div>
+          <div class="col-4 col-md-6 col-xl-3">
+            <i class="fa-4x fa-fw fa-solid fa-file-invoice-dollar"></i>
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-8 col-md-6 col-xl-9">
+            <h4>Payment Processing</h4>
+            Directly collect &amp; track payments or donations through GatherPack.
+          </div>
+          <div class="col-4 col-md-6 col-xl-3">
+            <i class="fa-4x fa-fw fa-solid fa-hand-holding-dollar"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row align-items-center">
+      <div class="col-4 col-md-2">
+        <i class="fa-6x fa-fw fa-solid fa-calendar"></i>
+      </div>
+      <div class="col-8 col-md-4">
+        <h3>Events</h3>
+        Get an at-a-glance view of all of the important happenings within your organization, either directly in GatherPack or through your Google Calendar or other calendaring tools.
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="row align-items-center my-3">
+          <div class="col-8 col-md-6 col-xl-9">
+            <h4>Check-In</h4>
+            Let people RSVP to events - and keep track of custom information like volunteer roles or hotel room assignments.
+          </div>
+          <div class="col-4 col-md-6 col-xl-3">
+            <i class="fa-4x fa-fw fa-solid fa-calendar-check"></i>
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-8 col-md-6 col-xl-9">
+            <h4>Time Tracking</h4>
+            Keep track of people's attendance as they volunteer or work for your organization, either via manual entry or our time clock kiosk.
+          </div>
+          <div class="col-4 col-md-6 col-xl-3">
+            <i class="fa-4x fa-fw fa-solid fa-user-clock"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row align-items-center">
+      <div class="col-4 col-md-2">
+        <i class="fa-6x fa-fw fa-solid fa-laptop-code"></i>
+      </div>
+      <div class="col-8 col-md-4">
+        <h3>Automation</h3>
+        Power users can write custom scripts, reports, and actions to automate tasks of all sorts throughout the system.
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="row align-items-center my-3">
+          <div class="col-8 col-md-6 col-xl-9">
+            <h4>Reports</h4>
+            Get custom-build insights into your organization's data.
+          </div>
+          <div class="col-4 col-md-6 col-xl-3">
+            <i class="fa-4x fa-fw fa-solid fa-file-code"></i>
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-8 col-md-6 col-xl-9">
+            <h4>Actions</h4>
+            Allow your users to trigger custom tasks throughout GatherPack.
+          </div>
+          <div class="col-4 col-md-6 col-xl-3">
+            <i class="fa-4x fa-fw fa-solid fa-wand-sparkles"></i>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -40,146 +217,6 @@
 
 <div class="card mb-5">
   <div class="card-header">
-    Happy GatherPackers
-  </div>
-  <div class="card-body">
-    <div class="row mx-3 my-3">
-      <div class="col-4 col-md-2 col-xl-1">
-        <a href="https://westside-robotics.info" target="_blank"><img src="/images/westsideRoboticsMark.png" alt="Westside Robotics logo"></a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="card mb-5">
-  <div class="card-header">
-    <h2>Tools &amp; Features</h2>
-  </div>
-  <div class="card-body">
-    <div class="row align-items-center">
-      <div class="col-12 col-md-6 col-xl-4">
-        <img src="/images/logo.png" alt="GatherPack logo">
-      </div>
-      <div class="col-12 col-md-6 col-xl-8">
-        <h3>People</h3>
-        Quickly find &amp; manage individuals associated with your organization, whether they have an account in the system or not.
-      </div>
-    </div>
-
-    <hr>
-
-    <div class="row align-items-center">
-      <div class="col-12 col-md-6 col-xl-4">
-        <img src="/images/logo.png" alt="GatherPack logo">
-      </div>
-      <div class="col-12 col-md-6 col-xl-8">
-        <h3>Teams</h3>
-        Group people together into different teams to manage their access to information and segment communication.
-      </div>
-    </div>
-
-    <hr>
-
-    <div class="row align-items-center">
-      <div class="col-12 col-md-6 col-xl-4">
-        <img src="/images/logo.png" alt="GatherPack logo">
-      </div>
-      <div class="col-12 col-md-6 col-xl-8">
-        <h3>Announcements</h3>
-        Post team-specific or site-wide announcements that can be scheduled to appear &amp; disappear as needed.
-      </div>
-    </div>
-
-    <hr>
-
-    <div class="row align-items-center">
-      <div class="col-12 col-md-6 col-xl-4">
-        <img src="/images/logo.png" alt="GatherPack logo">
-      </div>
-      <div class="col-12 col-md-6 col-xl-8">
-        <h3>Messaging</h3>
-        Manage inbound &amp; outbound communications via email, text, Slack, Discord, and more!
-      </div>
-    </div>
-
-    <hr>
-
-    <div class="row align-items-center">
-      <div class="col-12 col-md-6 col-xl-4">
-        <img src="/images/logo.png" alt="GatherPack logo">
-      </div>
-      <div class="col-12 col-md-6 col-xl-8">
-        <h3>Badges</h3>
-        Assign badges to people to track achievements - or just for fun!
-      </div>
-    </div>
-
-    <hr>
-
-    <div class="row align-items-center">
-      <div class="col-12 col-md-6 col-xl-4">
-        <img src="/images/logo.png" alt="GatherPack logo">
-      </div>
-      <div class="col-12 col-md-6 col-xl-8">
-        <h3>Time Tracking</h3>
-        Keep track of people's time as they volunteer or work for your organization, either via manual entry or our time clock kiosk.
-      </div>
-    </div>
-
-    <hr>
-
-    <div class="row align-items-center">
-      <div class="col-12 col-md-6 col-xl-4">
-        <img src="/images/logo.png" alt="GatherPack logo">
-      </div>
-      <div class="col-12 col-md-6 col-xl-8">
-        <h3>Finances</h3>
-        Help your organization stay on track financially with our simple, yet robust, bookkeeping tools and payment processing integrations.
-      </div>
-    </div>
-
-    <hr>
-
-    <div class="row align-items-center">
-      <div class="col-12 col-md-6 col-xl-4">
-        <img src="/images/logo.png" alt="GatherPack logo">
-      </div>
-      <div class="col-12 col-md-6 col-xl-8">
-        <h3>Event Calendar</h3>
-        Get an at-a-glance view of all of the important happenings within your organization, either in Gatherpack or through your Google Calendar or other calendaring tools.
-      </div>
-    </div>
-
-    <hr>
-
-    <div class="row align-items-center">
-      <div class="col-12 col-md-6 col-xl-4">
-        <img src="/images/logo.png" alt="GatherPack logo">
-      </div>
-      <div class="col-12 col-md-6 col-xl-8">
-        <h3>Event Check-In</h3>
-        Let people RSVP to events - with custom fields to manage things like volunteer roles or hotel room assignments.
-      </div>
-    </div>
-
-    <hr>
-
-    <div class="row align-items-center">
-      <div class="col-12 col-md-6 col-xl-4">
-        <img src="/images/logo.png" alt="GatherPack logo">
-      </div>
-      <div class="col-12 col-md-6 col-xl-8">
-        <h3>Automation</h3>
-        Power users can write custom scripts, reports, and actions to automate tasks of all sorts throughout the system.
-      </div>
-    </div>
-
-    <hr>
-  </div>
-</div>
-
-<div class="card mb-5">
-  <div class="card-header">
     <h2>Built by the Community, for the Community</h2>
   </div>
   <div class="card-body">
@@ -199,25 +236,16 @@
   </div>
 </div>
 
-<div class="card">
-  <div class="card-header">
-    <h2>Get in Touch</h2>
-  </div>
-  <div class="card-body">
+<%= partial :beta_cta %>
 
-    <p class="lead">
-      We are currently looking for <strong><em>beta testers</em></strong>!
-      If you're interested in trying this out, we'd love to hear more about your organization and how GatherPack can help!
-    </p>
-
-    <div class="row">
-      <div class="col-12 col-lg-6">
-        <iframe data-tally-src="https://tally.so/embed/wQAPeG?alignLeft=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="612" frameborder="0" marginheight="0" marginwidth="0" title="GatherPack Interest Form"></iframe><script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
       </div>
-      <div class="col-12 col-lg-6">
-        <a href="https://github.com/GatherPack" target="_blank" class="btn btn-primary btn-lg d-block my-3">Check Us Out on GitHub</a>
-        <a href="https://discord.gg/r3fmNDVn3N" target="_blank" class="btn btn-primary btn-lg d-block my-3">Join the Discord Server</a>
-        <a href="https://calendly.com/sledgehammer/gatherpack-demo-discussion" target="_blank" class="btn btn-primary btn-lg d-block my-3">Schedule a Demo</a>
+      <div class="modal-body">
+        <iframe data-tally-src="https://tally.so/embed/wQAPeG?alignLeft=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="612" frameborder="0" marginheight="0" marginwidth="0" title="GatherPack Interest Form"></iframe><script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
       </div>
     </div>
   </div>
