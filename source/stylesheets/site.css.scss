@@ -89,6 +89,7 @@ svg.svg-inline--fa {
 
   img {
     height: 1em;
+    width: 1em;
     display: inline;
   }
 }
@@ -130,4 +131,14 @@ footer {
   @extend .py-5;
   @extend .text-center;
   font-size: 0.75rem;
+}
+
+.logo{
+  width: 127px;
+}
+
+.beta_cta {
+  .btn:last-child {
+    margin-bottom: 0 !important;
+  }
 }
