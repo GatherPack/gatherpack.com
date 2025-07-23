@@ -142,3 +142,14 @@ footer {
     margin-bottom: 0 !important;
   }
 }
+
+.fa-ul {
+  li {
+    @extend .mb-2;
+    line-height: 1.15;
+  }
+
+  .fa-li {
+    top: 0px;
+  }
+}
