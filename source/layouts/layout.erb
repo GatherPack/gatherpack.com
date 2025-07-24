@@ -1,9 +1,38 @@
 <!DOCTYPE html>
-<html lang-"en">
+<html lang="en">
   <head>
-    <title>Get Together with GatherPack</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="GatherPack helps busy people-powered organizations stay organized without losing their minds.">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta http-equiv="content-type" content="text/html;UTF-8">
+    <meta http-equiv="content-language" content="en">
+
+    <meta name="author" content="Sledgehammer Infosystems">
+    <link rel="author" href="https://sledgehammerinfosystems.com"/>
+    <link rel="publisher" href="https://sledgehammerinfosystems.com"/>
+    <meta name="copyright" content="Sledgehammer Infosystems, LLC">
+
+    <meta http-equiv="cache-control" content="cache">
+    <meta http-equiv="revisit-after" content="1 day">
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="<%= current_page.data.title ? current_page.data.title : "GatherPack" %>" />
+    <meta property="og:site_name" data-page-subject="true" content="GatherPack" />
+    <meta property="og:url" content="https://gatherpack.com<%= current_page.url %>" />
+    <meta property="og:image" content="<%= current_page.data.graph_image ? current_page.data.graph_image : "https://gatherpack.com/images/logo.png" %>" />
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@gatherpack">
+    <link rel="canonical" href="https://gatherpack.com<%= current_page.url %>">
+    <meta itemprop="name" content="<%= current_page.data.title ? current_page.data.title + ' - GatherPack' : "GatherPack" %>">
+    
+    <% if current_page.data.description %>
+      <meta name="description" content="<%= current_page.data.description %>">
+      <meta name="twitter:description" content="<%= current_page.data.description %>">
+    <% end %>
+
+    <title><%= current_page.data.title ? current_page.data.title : "GatherPack" %></title>
 
     <%= stylesheet_link_tag "site", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "site", "data-turbo-track": "reload", defer: true %>
