@@ -69,6 +69,16 @@ $link-color: $greige-darkest;
 body {
   background-color: #afab9c;
   font-size: 18px;
+  --fa-primary-color: #6d6753;
+  --fa-secondary-color: #a59e86;
+}
+
+.fa-solid, .fa-brands {
+  color: #6d6753;
+}
+
+.btn .fa-solid, .btn .fa-brands {
+  color: white;
 }
 
 img {
