@@ -68,9 +68,11 @@ $link-color: $greige-darkest;
 
 body {
   background-color: #afab9c;
+  background-image: url("/images/45-degree-fabric-dark.png");
   font-size: 18px;
   --fa-primary-color: #6d6753;
-  --fa-secondary-color: #a59e86;
+  --fa-secondary-color: #6d6753;
+  --fa-secondary-opacity: 0.7;
 }
 
 .fa-solid, .fa-brands {
@@ -91,7 +93,7 @@ svg.svg-inline--fa {
 }
 
 .logoline {
-  @extend .mb-3;
+  @extend .my-5;
   font-family: $headings-font-family;
   font-size: 400%;
   text-align: center;
@@ -114,6 +116,41 @@ ul {
   @extend .mt-2;
   @extend .mb-5;
   border: none;
+}
+
+.card-hero {
+  @extend .fw-light;
+  @extend .lh-sm;
+  @extend .text-center;
+  @extend .text-white;
+  @extend .mx-1;
+  @extend .mx-md-5;
+  @extend .my-5;
+  @extend .p-3;
+  @extend .rounded;
+  
+  background-color: $greige-darkest;
+
+  p {
+    margin-bottom: 0.5em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &.small {
+      font-size: 0.66rem;
+    }
+  }
+
+  a {
+    color: white;
+    text-decoration: underline;
+  }
+}
+
+.btn {
+  border: thin solid $greige-darkest;
 }
 
 .card-header {
@@ -143,14 +180,8 @@ footer {
   font-size: 0.75rem;
 }
 
-.logo{
+.logo {
   width: 127px;
-}
-
-.beta_cta {
-  .btn:last-child {
-    margin-bottom: 0 !important;
-  }
 }
 
 .fa-ul {

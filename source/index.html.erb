@@ -1,28 +1,29 @@
 <h1 class="logoline">Get Together with <%= image_tag( 'logo.svg', alt: 'GatherPack', class: 'logo') %> GatherPack</h1>
 
-<p class="lead mb-4 text-center">People Management | Time &amp; Attendance Tracking | Event Planning | Money Management</p>
-
 <%= partial :beta_cta %>
 
-<div class="card bg-body-secondary text-white mx-1 mx-md-5">
-  <div class="card-body">
-    <p class="fs-3 fw-light text-center lh-sm">
-      GatherPack helps busy people-powered groups stay organized without losing their minds. 
-      Whether you're juggling events, tracking money, keeping up with members, trying to get everyone on the same page, or all of the above, 
-      all that information now has one place to live for everyone in your organization. 
-      It's open-source and built by folks that are using it day-in and day-out to run organizations of their own.
-    </p>
+<div class="row align-items-center justify-content-center">
+  <div class="col-12 col-md-8 col-lg-6">
+    <div class="card-hero m-0">
+      <p class="fs-3">
+        GatherPack helps busy people-powered groups stay organized without losing their minds. 
+        Whether you're juggling events, tracking money, keeping up with members, trying to get everyone on the same page, or all of the above, 
+        all that information now has one place to live for everyone in your organization. 
+      </p>
+    </div>
   </div>
-</div>
 
-<div class="card">
-  <div class="card-header">
-    <h2>Happy GatherPackers</h2>
-  </div>
-  <div class="card-body">
-    <div class="row mx-3 my-3 align-items-center justify-content-center">
-      <div class="col-4 col-md-2 col-xl-1">
-        <a href="https://westside-robotics.info" target="_blank"><img src="/images/westsideRoboticsMark.png" class="logo" alt="Westside Robotics logo"></a>
+  <div class="col-12 col-md-4 col-lg-6">
+    <div class="card m-0">
+      <div class="card-header">
+        <h2>Happy GatherPack Users</h2>
+      </div>
+      <div class="card-body">
+        <div class="row mx-3 my-3 align-items-center justify-content-center">
+          <div class="col-6 col-md-3">
+            <a href="https://westside-robotics.info" target="_blank"><img src="/images/westsideRoboticsMark.png" class="logo" alt="Westside Robotics logo"></a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -35,10 +36,8 @@
   <div class="card-body">
     <p>
       GatherPack's journey began with <a href="https://boilerinvasion.org" target="_blank">a FIRST Robotics Competition team</a> drowning in spreadsheets and sticky notes.
-      In those days, critical information about meeting attendance, fundraising progress, and 
-      team logistics was scattered across multiple files, desks, and brains.
-      This fragmented system made it challenging for team members to track progress, meet requirements, keep an eye on the finances,
-      or know who was planning on traveling to events without going around and asking people.
+      In those days, critical information about meeting attendance, fundraising progress, and team logistics was scattered across multiple files, desks, and brains.
+      This fragmented system made it challenging for mentors, team members, and parents to keep track of everything they needed to know without going around and asking people.
     </p>
 
     <p>
@@ -48,8 +47,8 @@
 
     <p>
       And now, almost 10 years later, <a href="https://westside-robotics.info" target="_blank">the organization behind that team</a> has basically quadrupled in size &amp; scope - 
-      and that original tool is starting to show its age and inability to keep up with some of the ways that the organization runs now.
-      That same volunteer - now the executive director of the organization - and a few of the students on the team decided to build a new tool from the ground up,
+      and that original tool has started to show its age and inability to keep up with some of the ways that the organization runs now.
+      That same volunteer and a few of the students on the team decided to build a new tool from the ground up,
       built to be more flexible, capable, and robust to handle not only their needs, 
       but the needs of other teams and organizations that have been looking for a tool like this to help keep their groups more organized.
       And we're partnering with said volunteer's <a href="https://sledgehammerinfosystems.com" target="_blank">software &amp; consulting company</a> to provide hosting, implementation, and custom development services too!
@@ -64,7 +63,7 @@
   <div class="card-body">
     <div class="row align-items-center">
       <div class="col-4 col-md-2">
-        <i class="fa-5x fa-fw fa-solid fa-person"></i>
+        <i class="fa-5x fa-solid fa-person"></i>
       </div>
       <div class="col-8 col-md-4">
         <h3>People</h3>
@@ -77,7 +76,17 @@
             Group people together into different teams to manage their access to information and segment communication.
           </div>
           <div class="col-4 col-md-6 col-xl-3">
-            <i class="fa-4x fa-fw fa-solid fa-users"></i>
+            <i class="fa-4x fa-duotone fa-solid fa-users"></i>
+          </div>
+        </div>
+
+        <div class="row align-items-center my-3">
+          <div class="col-8 col-md-6 col-xl-9">
+            <h4>Managers</h4>
+            Grant certain users the ability to manage content, events, and people on their teams.
+          </div>
+          <div class="col-4 col-md-6 col-xl-3">
+            <i class="fa-4x fa-duotone fa-solid fa-user-tie"></i>
           </div>
         </div>
 
@@ -87,7 +96,7 @@
             Assign badges to people to track their achievements - or just for fun!
           </div>
           <div class="col-4 col-md-6 col-xl-3">
-            <i class="fa-4x fa-fw fa-solid fa-certificate"></i>
+            <i class="fa-4x fa-duotone fa-solid fa-certificate"></i>
           </div>
         </div>
       </div>
@@ -97,20 +106,22 @@
 
     <div class="row align-items-center">
       <div class="col-4 col-md-2">
-        <i class="fa-5x fa-fw fa-solid fa-comments"></i>
+        
+        <i class="fa-5x fa-solid fa-message"></i>
       </div>
       <div class="col-8 col-md-4">
-        <h3>Messaging</h3>
-        Manage inbound &amp; outbound communications via email, text, Slack, Discord, and more! *
+        <h3>Announcements</h3>
+        Post team-specific or site-wide announcements that can be scheduled to appear &amp; disappear as needed.
+        
       </div>
       <div class="col-12 col-md-6">
         <div class="row align-items-center my-3">
           <div class="col-8 col-md-6 col-xl-9">
-            <h4>Announcements</h4>
-            Post team-specific or site-wide announcements that can be scheduled to appear &amp; disappear as needed.
+            <h4>Messaging</h4>
+            Manage inbound &amp; outbound communications via email, text, Slack, Discord, and more!*
           </div>
           <div class="col-4 col-md-6 col-xl-3">
-            <i class="fa-4x fa-fw fa-solid fa-message"></i>
+            <i class="fa-4x fa-duotone fa-solid fa-comments"></i>
           </div>
         </div>
 
@@ -120,7 +131,7 @@
             Get automatically notified about anything and everything that you want that happens inside GatherPack. *
           </div>
           <div class="col-4 col-md-6 col-xl-3">
-            <i class="fa-4x fa-fw fa-solid fa-paper-plane"></i>
+            <i class="fa-4x fa-duotone fa-solid fa-hexagon-exclamation"></i>
           </div>
         </div>
       </div>
@@ -130,7 +141,7 @@
 
     <div class="row align-items-center">
       <div class="col-4 col-md-2">
-        <i class="fa-5x fa-fw fa-solid fa-money-bill"></i>
+        <i class="fa-5x fa-solid fa-money-bill"></i>
       </div>
       <div class="col-8 col-md-4">
         <h3>Finance Tools</h3>
@@ -143,7 +154,7 @@
             Keep your finances organized with our flexible transaction tagging system.
           </div>
           <div class="col-4 col-md-6 col-xl-3">
-            <i class="fa-4x fa-fw fa-solid fa-file-invoice-dollar"></i>
+            <i class="fa-4x fa-duotone fa-solid fa-file-invoice-dollar"></i>
           </div>
         </div>
 
@@ -153,7 +164,7 @@
             Directly collect &amp; track payments or donations through GatherPack. *
           </div>
           <div class="col-4 col-md-6 col-xl-3">
-            <i class="fa-4x fa-fw fa-solid fa-hand-holding-dollar"></i>
+            <i class="fa-4x fa-duotone fa-solid fa-hand-holding-dollar"></i>
           </div>
         </div>
       </div>
@@ -163,7 +174,7 @@
 
     <div class="row align-items-center">
       <div class="col-4 col-md-2">
-        <i class="fa-5x fa-fw fa-solid fa-calendar"></i>
+        <i class="fa-5x fa-solid fa-calendar"></i>
       </div>
       <div class="col-8 col-md-4">
         <h3>Events</h3>
@@ -176,7 +187,7 @@
             Let people RSVP to events - and keep track of custom information like volunteer roles or hotel room assignments.
           </div>
           <div class="col-4 col-md-6 col-xl-3 my-3">
-            <i class="fa-4x fa-fw fa-solid fa-calendar-check"></i>
+            <i class="fa-4x fa-duotone fa-solid fa-calendar-check"></i>
           </div>
         </div>
 
@@ -186,7 +197,7 @@
             Keep track of people's attendance as they volunteer or work for your organization, either via manual entry or our time clock kiosk.
           </div>
           <div class="col-4 col-md-6 col-xl-3">
-            <i class="fa-4x fa-fw fa-solid fa-user-clock"></i>
+            <i class="fa-4x fa-duotone fa-solid fa-user-clock"></i>
           </div>
         </div>
       </div>
@@ -196,7 +207,7 @@
 
     <div class="row align-items-center">
       <div class="col-4 col-md-2">
-        <i class="fa-5x fa-fw fa-solid fa-laptop-code"></i>
+        <i class="fa-5x fa-solid fa-laptop-code"></i>
       </div>
       <div class="col-8 col-md-4">
         <h3>Automation</h3>
@@ -209,17 +220,17 @@
             Get custom-built insights into your organization's data.
           </div>
           <div class="col-4 col-md-6 col-xl-3">
-            <i class="fa-4x fa-fw fa-solid fa-file-code"></i>
+            <i class="fa-4x fa-duotone fa-solid fa-file-code"></i>
           </div>
         </div>
 
         <div class="row align-items-center my-3">
           <div class="col-8 col-md-6 col-xl-9">
             <h4>Actions</h4>
-            Allow your users to trigger custom tasks throughout GatherPack.
+            Allow your users to trigger custom tasks throughout GatherPack.*
           </div>
           <div class="col-4 col-md-6 col-xl-3">
-            <i class="fa-4x fa-fw fa-solid fa-wand-sparkles"></i>
+            <i class="fa-4x fa-duotone fa-solid fa-wand-sparkles"></i>
           </div>
         </div>
 
@@ -229,7 +240,7 @@
             Run custom actions in response to anything that happens in the system.
           </div>
           <div class="col-4 col-md-6 col-xl-3">
-            <i class="fa-4x fa-fw fa-solid fa-code-pull-request"></i>
+            <i class="fa-4x fa-duotone fa-solid fa-code-pull-request"></i>
           </div>
         </div>
       </div>

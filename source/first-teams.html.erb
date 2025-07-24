@@ -1,30 +1,26 @@
 <h1 class="logoline">Get Together with <%= image_tag( 'logo.svg', alt: 'GatherPack', class: 'logo') %> GatherPack</h1>
 
-<p class="lead mb-4 text-center">People Management | Time &amp; Attendance Tracking | Event Planning | Money Management</p>
+<div class="card-hero">
+  <p class="fs-3">GatherPack started as a tool created by a FIRST mentor &amp; team members to support their FIRST programs.</p>
+  <p class="fs-4">And now we want to share what we've made with all of you to help you manage the operations of your programs in one place, too.</p>
+</div>
 
 <%= partial :beta_cta %>
 
-<div class="card bg-body-secondary text-white mx-1 mx-md-5 mt-5">
-  <div class="card-body">
-    <p class="fs-3 fw-light text-center lh-sm">
-      GatherPack was created by a FIRST mentor &amp; team members to support FIRST programs.
-      GatherPack helps manage your students, mentors, parents, alumni, and your whole community in one place. 
-    </p>
-  </div>
-</div>
-
-<div class="card mx-md-5">
+<div class="card mt-5">
   <div class="card-header">
     <h2>Organization</h2>
   </div>
   <div class="card-body">
     <div class="row align-items-center">
-      <div class="col-12 col-md-3 col-xl-1 text-end">
+      <div class="col-12 col-md-3 col-xl-1 text-center">
         <i class="fa-4x fa-duotone fa-solid fa-chart-diagram"></i>
       </div>
       <div class="col-12 col-md-9 col-xl-11">
-        <p class="fs-5">Make GatherPack your single source of truth for who's who and what's what.</p>
+        <p class="fs-5 fw-bold">Make GatherPack your single source of truth for who's who and what's what.</p>
         <ul class="fa-ul">
+          <li><span class="fa-li"><i class="fa-solid fa-clipboard-list-check"></i></span>Keep track of everyone's important information - contact info, dietary restrictions, shirt sizes - in one place that people can update themselves.</li>
+          <li><span class="fa-li"><i class="fa-solid fa-family"></i></span>Define relationships between people so you can, among other things, keep track of which parent belongs to which kid.</li>
           <li><span class="fa-li"><i class="fa-solid fa-users"></i></span>Organize your people into teams</li>
           <ul class="fa-ul">
             <li><span class="fa-li"><i class="fa-solid fa-diagram-project"></i></span>Create sub-teams (and sub-sub-teams)</li>
@@ -38,23 +34,23 @@
   </div>
 </div>
 
-<div class="card mx-md-5">
+<div class="card">
   <div class="card-header">
     <h2>Communication</h2>
   </div>
   <div class="card-body">
     <div class="row align-items-center">
-      <div class="col-12 col-md-3 col-xl-1 text-end">
+      <div class="col-12 col-md-3 col-xl-1 text-center">
         <i class="fa-4x fa-duotone fa-solid fa-messages"></i>
       </div>
       <div class="col-12 col-md-9 col-xl-11">
-        <p class="fs-5">GatherPack helps keep your team members, parents, and mentors connected and informed.</p>
+        <p class="fs-5 fw-bold">GatherPack helps keep your team members, parents, and mentors connected and informed.</p>
         <ul class="fa-ul">
           <li><span class="fa-li"><i class="fa-solid fa-message-captions"></i></span>Post scheduled announcements for individual teams or for everyone in your organization</li>
           <li><span class="fa-li"><i class="fa-solid fa-mailbox-flag-up"></i></span>Send out regularly scheduled personalized announcement &amp; activity summaries via email</li>
           <ul class="fa-ul">
             <li><span class="fa-li"><i class="fa-solid fa-bell"></i></span>Or, send notifications immediately when publishing a new announcement</li>
-            <li><span class="fa-li"><i class="fa-solid fa-paper-plane"></i></span>And coming soon, send notifications via text, mobile push notification, Discord, Slack, etc.</li>
+            <li><span class="fa-li"><i class="fa-solid fa-hexagon-exclamation"></i></span>And, coming soon, send notifications about most anything via text, mobile push notification, Discord, Slack, etc.</li>
           </ul>
           <li><span class="fa-li"><i class="fa-solid fa-file-circle-info"></i></span>Create content pages to share important information and resources</li>
         </ul>
@@ -63,22 +59,24 @@
   </div>
 </div>
 
-<div class="card mx-md-5">
+<div class="card">
   <div class="card-header">
     <h2>Events</h2>
   </div>
   <div class="card-body">
     <div class="row align-items-center">
-      <div class="col-12 col-md-3 col-xl-1 text-end">
+      <div class="col-12 col-md-3 col-xl-1 text-center">
         <i class="fa-4x fa-duotone fa-solid fa-calendars"></i>
       </div>
       <div class="col-12 col-md-9 col-xl-11">
-        <p class="fs-5">Let GatherPack track events, activities, and important dates for your team.</p>
+        <p class="fs-5 fw-bold">Let GatherPack track events, activities, and important dates for your team.</p>
         <ul class="fa-ul">
           <li><span class="fa-li"><i class="fa-solid fa-calendar-lines-pen"></i></span>Post events to your team's calendar</li>
           <ul class="fa-ul">
-            <li><span class="fa-li"><i class="fa-solid fa-calendar-users"></i></span>Track who's coming - and who's not - to each event.</li>
-            <li><span class="fa-li"><i class="fa-solid fa-pen-field"></i></span>Assign custom fields to event types to track hotel room assignments, transportation methods, and whatever else you need to know.</li>
+            <li><span class="fa-li"><i class="fa-solid fa-calendar-users"></i></span>Let people RSVP to your events.</li>
+            <li><span class="fa-li"><i class="fa-solid fa-pen-field"></i></span>Define custom fields to track hotel room assignments, transportation methods, and whatever else you need to know.</li>
+            <li><span class="fa-li"><i class="fa-solid fa-radar"></i></span>And, coming soon, track attendance at specific checkpoints during events.</li>
+            <li><span class="fa-li"><i class="fa-solid fa-user-question"></i></span>Also coming soon, set requirements that people have to meet before checking in to an event.</li>
           </ul>
           <li><span class="fa-li"><i class="fa-solid fa-cake-candles"></i></span>Keep track of all your team members' birthdays</li>
           <li><span class="fa-li"><i class="fa-solid fa-rotate"></i></span>And, coming soon, display your GatherPack calendar with your Google Calendar or other calendar tools.</li>
@@ -88,22 +86,24 @@
   </div>
 </div>
 
-<div class="card mx-md-5">
+<div class="card">
   <div class="card-header">
     <h2>Time Tracking</h2>
   </div>
   <div class="card-body">
     <div class="row align-items-center">
-      <div class="col-12 col-md-3 col-xl-1 text-end">
+      <div class="col-12 col-md-3 col-xl-1 text-center">
         <i class="fa-4x fa-duotone fa-solid fa-clock"></i>
       </div>
       <div class="col-12 col-md-9 col-xl-11">
-        <p class="fs-5">GatherPack tracks meeting &amp; volunteer hours.</p>
+        <p class="fs-5 fw-bold">GatherPack tracks meeting &amp; volunteer hours.</p>
         <ul class="fa-ul">
           <li><span class="fa-li"><i class="fa-solid fa-timer"></i></span>Create time clock periods to track and report on different activities.</li>
-          <li><span class="fa-li"><i class="fa-solid fa-user-clock"></i></span>Manually input time clock entries, or use the time clock kiosk to get people to track their own time.</li>
+          <li><span class="fa-li"><i class="fa-solid fa-user-clock"></i></span>Manually review, create, and update time clock entries.</li>
+          <li><span class="fa-li"><i class="fa-solid fa-clock"></i></span>Use the time clock kiosk to let people clock themselves in &amp; out.</li>
           <ul class="fa-ul">
             <li><span class="fa-li"><i class="fa-solid fa-nfc"></i></span>Use PIN numbers, a barcode scanner, an RFID reader, or other methods to let people clock in &amp; out at the kiosk.</li>
+            <li><span class="fa-li"><i class="fa-solid fa-bolt"></i></span>Trigger custom tasks from the kiosk, like automatically clocking everyone out at the end of a meeting.</li>
           </ul>
         </ul>
       </div>
@@ -111,27 +111,29 @@
   </div>
 </div>
 
-<div class="card mx-md-5">
+<div class="card">
   <div class="card-header">
     <h2>Finances</h2>
   </div>
   <div class="card-body">
     <div class="row align-items-center">
-      <div class="col-12 col-md-3 col-xl-1 text-end">
+      <div class="col-12 col-md-3 col-xl-1 text-center">
         <i class="fa-4x fa-duotone fa-solid fa-money-bill-trend-up"></i>
       </div>
       <div class="col-12 col-md-9 col-xl-11">
-        <p class="fs-5">Keep an eye on your team's finances with GatherPack.</p>
+        <p class="fs-5 fw-bold">Keep an eye on your team's finances with GatherPack.</p>
         <ul class="fa-ul">
           <li><span class="fa-li"><i class="fa-solid fa-receipt"></i></span>Handle your organization's books with our simple financial ledger system.</li>
-          <li><span class="fa-li"><i class="fa-solid fa-comments-dollar"></i></span>Add tags to transactions for better organization and tracking.</li>
           <ul class="fa-ul">
-            <li><span class="fa-li"><i class="fa-solid fa-piggy-bank"></i></span>And, coming soon, automatically pull transactions into GatherPack from your bank account.</li>
+            <li><span class="fa-li"><i class="fa-solid fa-comments-dollar"></i></span>Add tags to transactions for budget tracking.</li>
+            <li><span class="fa-li"><i class="fa-solid fa-receipt"></i></span>Upload receipts &amp; invoices to keep everything organized.</li>
           </ul>
-          <li><span class="fa-li"><i class="fa-solid fa-money-check-pen"></i></span>Accept online payments &amp; donations.</li>
+          <li><span class="fa-li"><i class="fa-solid fa-money-check-pen"></i></span>For those of you with access to non-school-based banking, accept online payments &amp; donations.</li>
           <ul class="fa-ul">
             <li><span class="fa-li"><i class="fa-brands fa-cc-stripe"></i></span>Accept credit cards, bank transfer, and dozens of other payment methods via Stripe.</li>
             <li><span class="fa-li"><i class="fa-brands fa-cc-paypal"></i></span>And, coming soon, PayPal &amp; Venmo support.</li>
+            <li><span class="fa-li"><i class="fa-solid fa-building-columns"></i></span>Also coming soon, automatically pull transactions from your bank account into GatherPack.</li>
+            <li><span class="fa-li"><i class="fa-solid fa-piggy-bank"></i></span>And, maybe coming to our hosting service eventually, a fiscal sponsorship model that will provide online payment support for those of you without an independent bank account.</li>
           </ul>
         </ul>
       </div>
@@ -139,17 +141,15 @@
   </div>
 </div>
 
-<div class="card bg-body-secondary text-white mx-1 mx-md-5">
-  <div class="card-body">
-    <p class="fs-3 fw-light text-center lh-sm">
-      Host GatherPack yourself, or let us deal with that for you - with a significantly discounted hosting fee* for FIRST teams.
-    </p>
+<div class="card-hero">
+  <p class="fs-3">
+    Host GatherPack yourself, or let <a href="https://sledgehammerinfosystems.com" target="_blank">Sledgehammer Infosystems</a> deal with that, and several paid service integrations, for you - with a significantly discounted hosting fee* for FIRST teams.
+  </p>
 
-    <p class="small text-center fw-light mx-5">
-      * We're still working out pricing for our hosting service as we're doing our beta test roll-out.
-      We intend to do hosting for FIRST teams "at cost" - which is looking like about $20/month.
-    </p>
-  </div>
+  <p class="small">
+    * We're still working out pricing for our hosting service as we're doing our beta test roll-out.
+    Sledgehammer Infosystems is hosting FIRST teams "at cost," more ore less. Right now that's looking like about $20-30 a month, but will get cheaper as more organizations come on board.
+  </p>
 </div>
 
 <%= partial :beta_cta %>
