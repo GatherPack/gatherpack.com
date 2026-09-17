@@ -18,24 +18,25 @@
     <meta http-equiv="revisit-after" content="1 day">
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="<%= current_page.data.title ? current_page.data.title : "GatherPack" %>" />
+    <meta property="og:title" content="<%= data.title ? data.title : "GatherPack" %>" />
     <meta property="og:site_name" data-page-subject="true" content="GatherPack" />
-    <meta property="og:url" content="https://gatherpack.com<%= current_page.url %>" />
-    <meta property="og:image" content="<%= current_page.data.graph_image ? current_page.data.graph_image : "https://gatherpack.com/images/logo.png" %>" />
+    <meta property="og:url" content="<%= absolute_url resource.relative_url %>" />
+    <meta property="og:image" content="<%= data.graph_image ? data.graph_image : absolute_url("/images/logo.png") %>" />
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@gatherpack">
-    <link rel="canonical" href="https://gatherpack.com<%= current_page.url %>">
-    <meta itemprop="name" content="<%= current_page.data.title ? current_page.data.title + ' - GatherPack' : "GatherPack" %>">
+    <link rel="canonical" href="<%= absolute_url resource.relative_url %>">
+    <meta itemprop="name" content="<%= data.title ? "#{data.title} - GatherPack" : "GatherPack" %>">
     
-    <% if current_page.data.description %>
-      <meta name="description" content="<%= current_page.data.description %>">
-      <meta name="twitter:description" content="<%= current_page.data.description %>">
+    <% if data.description %>
+      <meta name="description" content="<%= data.description %>">
+      <meta name="twitter:description" content="<%= data.description %>">
     <% end %>
 
-    <title><%= current_page.data.title ? current_page.data.title : "GatherPack" %></title>
+    <title><%= data.title ? data.title : "GatherPack" %></title>
 
-    <%= stylesheet_link_tag "site", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "site", "data-turbo-track": "reload", defer: true %>
+    <link rel="stylesheet" href="<%= asset_path :css %>" />
+    <script src="<%= asset_path :js %>" defer></script>
+    <%= live_reload_dev_js %>
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Fira+Code:wght@300..700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
