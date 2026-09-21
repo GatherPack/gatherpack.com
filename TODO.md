@@ -209,7 +209,7 @@ sitemap.xml, robots.txt, site.webmanifest (fixed)
 
 > **Content depth per new page (ship gate):** unique `title`/`description`/`og:*`/`canonical` + single `h1` matching primary intent · 300–600 words (tight, card pattern) · 1 screenshot/diagram · 1 proof element (logo/testimonial/stat) · 2–3 embedded FAQs (also on `/faq`) · CTA row (same 4 CTAs from `src/_partials/_beta_cta.erb:1-16`) · ≥2 outbound sibling links + ≥1 inbound from hub/homepage.
 
-- [ ] **3.1 Features hub + 5 pillar pages** `§2.16` `Backlog #15` `Medium/High`
+- [x] **3.1 Features hub + 5 pillar pages** `§2.16` `Backlog #15` `Medium/High`
   - New: `src/features.erb` (hub), `src/features/members.erb`, `src/features/events.erb`, `src/features/finance.erb`, `src/features/communication.erb`, `src/features/automation.erb`
   - Source: split `src/index.erb:41-240` + `src/first-teams.erb:13-148` details.
   - Hub: consistent card grid (1.4 pattern) linking to each pillar; each card has screenshot thumb.
@@ -222,26 +222,26 @@ sitemap.xml, robots.txt, site.webmanifest (fixed)
   - Each: `h1` = "[Feature] for Teams & Clubs" (keyword-aware per `AUDIT.md:§6b`), 3–5 sub-feature blocks with icon/screenshot+heading+1–2 sentences, `Coming Soon` moved to roadmap split (see 2.4), FAQ pair, CTA.
   - Done when: hub links to pillars and vice versa; internal cross-links to relevant use-cases (e.g. Events → `/use-cases/first-robotics` check-in).
 
-- [ ] **3.2 Use-case landing pages** `§2.15` `Backlog #16` `Medium/High`
+- [x] **3.2 Use-case landing pages** `§2.15` `Backlog #16` `Medium/High`
   - New: `src/use-cases/first-robotics.erb`, `src/use-cases/nonprofits.erb`, `src/use-cases/churches.erb`, `src/use-cases/youth-clubs.erb`, `src/use-cases/sports-leagues.erb`
   - Start with at least `first-robotics` + `nonprofits` as flagships; draft remaining 3 in v1 per `AUDIT.md:§5b`.
   - `first-robotics`: **merge + replace** `src/first-teams.erb:1-165` — add unique `title`/`description`/`h1` with primary term `FIRST robotics team management software` (`AUDIT.md:§6b`), definition block, 3–4 tailored feature callouts (calendar, time clock kiosk `src/first-teams.erb:100-118`, finances), Westside/Golden Gate logos, screenshot, FAQ, CTA. Add 301 redirect `first-teams` → `/use-cases/first-robotics` (Bridgetown `permalink` or Netlify `_redirects`; document in `config/*`).
   - Other use-cases: same template, keyword per `AUDIT.md:§6b` table (nonprofits `nonprofit membership management software`, churches `church management software`, youth-clubs `youth club management software`, sports-leagues `sports league management software`). Each tailored proof + feature tie-ins + cross-link to `/features/*`.
   - Wire from: homepage persona list `src/index.erb:242-254` becomes linked cards; nav `Use Cases ▾`.
 
-- [ ] **3.3 Open-source / self-hosting pillar** `§2.17` `Backlog #17` `Low-Med/High`
+- [x] **3.3 Open-source / self-hosting pillar** `§2.17` `Backlog #17` `Low-Med/High`
   - New: `src/open-source.erb` (canonical; alias `/self-hosting` → redirect)
   - Include: 1-sentence definition (MIT per `LICENSE.txt` — surface SPDX identifier), why self-host vs managed (control/privacy/cost), what self-hosting entails (tech requirements, quick-start link to `https://github.com/GatherPack/gatherpack`), comparison table Self-host Free vs Managed Hosted via Sledgehammer (price philosophy $50/$100, support, updates, payments integration), GitHub stats/callout, CTAs both ways. Normalize GitHub URL to `https://github.com/GatherPack/gatherpack` (`AUDIT.md:§5b`).
   - Keyword: `open source group management software` + `self-hosted club management` (`AUDIT.md:§6b`).
   - Add JSON-LD `SoftwareApplication.isAccessibleForFree: true` + `offers`.
 
-- [ ] **3.4 Hosting / pricing philosophy page** `§2.18` `Backlog #18` `Low/High`
+- [x] **3.4 Hosting / pricing philosophy page** `§2.18` `Backlog #18` `Low/High`
   - New: `src/hosting.erb` (canonical; alias `/pricing` → redirect)
   - Include: philosophy copy, self-host vs managed table (shared with 3.3 or cross-linked), FIRST-teams discount callout (reuse Westside/Golden Gate proof; note discount not itemized per §5b), tiers `Standard $50/mo` / `Custom $100/mo + plugin dev`. Clear "Contact for current hosted tiers" CTA (links to `/contact` qualifying form). Even without hard numbers, still indexable for "GatherPack pricing/hosting cost" intent.
   - Add `Offer`/`AggregateOffer` JSON-LD once numbers final (can ship philosophy-only first).
   - Keyword: `GatherPack pricing / hosting cost` (`AUDIT.md:§6b`).
 
-- [ ] **3.5 Update homepage cross-links** `§2.10` (cont.)
+- [x] **3.5 Update homepage cross-links** `§2.10` (cont.)
   - After 3.1–3.4: homepage feature grid + persona list + open-source blurb + pricing blurb all link contextually to new pages. Verify no orphan pages (sitemap vs crawl).
 
 ---
