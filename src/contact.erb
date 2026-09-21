@@ -1,0 +1,142 @@
+---
+title: "Contact GatherPack \u2014 Get Started / Schedule a Demo"
+description: "Contact GatherPack to get started or schedule a demo. Self-host free\
+  \ or get managed hosting \u2014 tell us about your org type, size, and hosting interest."
+layout: default
+sitemap_priority: '0.8'
+sitemap_change_frequency: monthly
+last_modified_at: '2026-09-17'
+---
+
+<h1>Contact GatherPack</h1>
+
+<p class="lead">Tell us about your team and how you want to run GatherPack — self-hosted or managed — and we’ll get you to the right next step. This page is the crawlable home for our interest form; the same form also opens as a modal from any <em>Contact Us to Get Started</em> button.</p>
+
+<section id="contact-options" class="card" aria-labelledby="contact-options-heading">
+  <div class="card-header">
+    <h2 id="contact-options-heading">Ways to reach us</h2>
+  </div>
+  <div class="card-body">
+    <ul class="mb-0">
+      <li><strong>Interest form (Tally):</strong> embedded below — works with or without JavaScript.</li>
+      <li><strong>Schedule a demo:</strong> <a href="https://cal.com/sledgehammer/gatherpack-discussion-demo" target="_blank" rel="noopener">cal.com/sledgehammer/gatherpack-discussion-demo</a></li>
+      <li><strong>Email:</strong> <a href="mailto:hello@gatherpack.com">hello@gatherpack.com</a></li>
+      <li><strong>GitHub:</strong> <a href="https://github.com/GatherPack/gatherpack" target="_blank" rel="noopener">GatherPack/gatherpack</a> for self-host questions</li>
+      <li><strong>Discord:</strong> <a href="https://discord.gg/r3fmNDVn3N" target="_blank" rel="noopener">Join the Discord</a></li>
+    </ul>
+  </div>
+</section>
+
+<section id="interest-form" class="card" aria-labelledby="interest-form-heading">
+  <div class="card-header">
+    <h2 id="interest-form-heading">Interest form</h2>
+  </div>
+  <div class="card-body">
+    <p class="small text-muted mb-3">The Tally form below includes a few light qualifying questions — org type, size, and technical capacity / self-host interest — to route you faster and signal our process maturity. If the embed doesn’t load, use the plain HTML fallback right after it or the links above. Both are crawlable.</p>
+
+    <!-- Tally embed — same source as src/_partials/_contact_modal.erb -->
+    <div class="ratio" style="--bs-aspect-ratio: 140%;">
+      <iframe data-tally-src="https://tally.so/embed/wQAPeG?alignLeft=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="612" frameborder="0" marginheight="0" marginwidth="0" title="GatherPack Interest Form"></iframe>
+      <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+    </div>
+    <p class="small text-muted mt-2 mb-0">Direct link: <a href="https://tally.so/r/wQAPeG" target="_blank" rel="noopener">tally.so/r/wQAPeG</a></p>
+
+    <hr class="my-4">
+
+    <!-- Plain HTML fallback — crawlable, no-JS -->
+    <h3 class="h5">Plain HTML fallback (no JavaScript needed)</h3>
+    <p class="small text-muted">This form is crawlable for search and answer engines and works without JavaScript. Submit via email handler or copy-paste into an email to <a href="mailto:hello@gatherpack.com">hello@gatherpack.com</a>.</p>
+    <form action="mailto:hello@gatherpack.com" method="post" enctype="text/plain" class="needs-validation" novalidate>
+      <div class="row g-3">
+        <div class="col-12 col-md-6">
+          <label for="contact-name" class="form-label">Name</label>
+          <input type="text" id="contact-name" name="name" class="form-control" placeholder="Jane Doe" required autocomplete="name">
+        </div>
+        <div class="col-12 col-md-6">
+          <label for="contact-email" class="form-label">Email</label>
+          <input type="email" id="contact-email" name="email" class="form-control" placeholder="you@example.com" required autocomplete="email">
+        </div>
+        <div class="col-12 col-md-6">
+          <label for="contact-org" class="form-label">Organization</label>
+          <input type="text" id="contact-org" name="organization" class="form-control" placeholder="Westside Robotics / St. Mark Youth Group">
+        </div>
+        <div class="col-12 col-md-6">
+          <label for="contact-org-type" class="form-label">Org type <span class="text-muted">(qualifying)</span></label>
+          <select id="contact-org-type" name="org_type" class="form-select" required>
+            <option value="" disabled selected>Choose…</option>
+            <option>FIRST Robotics (FRC/FTC)</option>
+            <option>Youth club / after-school</option>
+            <option>Nonprofit / community org</option>
+            <option>Church / religious group</option>
+            <option>Sports league</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="col-12 col-md-6">
+          <label for="contact-size" class="form-label">Org size <span class="text-muted">(qualifying)</span></label>
+          <select id="contact-size" name="org_size" class="form-select">
+            <option value="" disabled selected>Choose…</option>
+            <option>1–10 members</option>
+            <option>11–50 members</option>
+            <option>51–150 members</option>
+            <option>150–500 members</option>
+            <option>500+ members</option>
+          </select>
+        </div>
+        <div class="col-12 col-md-6">
+          <label for="contact-hosting" class="form-label">Hosting interest <span class="text-muted">(qualifying)</span></label>
+          <select id="contact-hosting" name="hosting_interest" class="form-select">
+            <option value="" disabled selected>Choose…</option>
+            <option>Self-host free (MIT) — we have technical capacity</option>
+            <option>Managed Standard $50/mo</option>
+            <option>Managed Custom $100/mo + plugins</option>
+            <option>Not sure — help me compare</option>
+          </select>
+        </div>
+        <div class="col-12">
+          <label for="contact-message" class="form-label">How can we help?</label>
+          <textarea id="contact-message" name="message" class="form-control" rows="4" placeholder="Tell us about your roster size, events, and what you’re hoping GatherPack handles…"></textarea>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send via email</button>
+          <span class="small text-muted ms-2">Or email directly: <a href="mailto:hello@gatherpack.com">hello@gatherpack.com</a></span>
+        </div>
+      </div>
+    </form>
+    <p class="small text-muted mt-3 mb-0">Qualifying questions match the structured beta-signup intent from the audit (§2.7): org type, size, and technical capacity/self-host interest. They improve lead quality and give GEO a citable “how to get started” target.</p>
+  </div>
+</section>
+
+<section id="what-next" class="card" aria-labelledby="what-next-heading">
+  <div class="card-header">
+    <h2 id="what-next-heading">What happens next</h2>
+  </div>
+  <div class="card-body">
+    <ol class="mb-0">
+      <li><strong>We read your note</strong> — routing by org type and hosting interest.</li>
+      <li><strong>Demo or repo walkthrough</strong> — via <a href="https://cal.com/sledgehammer/gatherpack-discussion-demo" target="_blank" rel="noopener">Cal.com</a> or a GitHub-local run, your choice.</li>
+      <li><strong>Invite to a pilot</strong> — two orgs live today, six evaluating; we onboard deliberately, not at “invite-only beta” scale.</li>
+    </ol>
+    <p class="mb-0 mt-3 small text-muted">Prefer to self-evaluate first? Start at <a href="https://github.com/GatherPack/gatherpack" target="_blank" rel="noopener">GitHub</a> or <a href="/features/">Features</a>. Pricing philosophy lives at <a href="/hosting/">/hosting</a>; open source at <a href="/open-source/">/open-source</a>.</p>
+  </div>
+</section>
+
+<section id="faq" class="card" aria-labelledby="faq-heading">
+  <div class="card-header">
+    <h2 id="faq-heading">Contact FAQs</h2>
+  </div>
+  <div class="card-body">
+    <h3 class="h5">Do I have to schedule a demo to try GatherPack?</h3>
+    <p>No. Self-hosters can clone <a href="https://github.com/GatherPack/gatherpack" target="_blank" rel="noopener">the repo</a> and try locally; others can book a <a href="https://cal.com/sledgehammer/gatherpack-discussion-demo" target="_blank" rel="noopener">15-minute demo</a> with qualifying info already in hand.</p>
+    <h3 class="h5">How do you handle FIRST discounts?</h3>
+    <p>At cost, more or less — contact for the current FIRST rate rather than a stale public number. <a href="/hosting/#first-discount">Details</a></p>
+    <p class="mb-0"><a href="/faq/">All FAQs →</a></p>
+  </div>
+</section>
+
+<section id="cta" aria-labelledby="cta-heading">
+  <h2 id="cta-heading" class="visually-hidden">More ways to get started</h2>
+  <%= render "beta_cta" %>
+</section>
+
+<p class="small text-muted">Related: <a href="/about/">About &amp; timeline</a> · <a href="/roadmap/">Roadmap</a> · <a href="/open-source/">Open source</a> · <a href="/faq/">FAQ</a></p>

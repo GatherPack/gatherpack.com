@@ -1,0 +1,108 @@
+---
+title: "GatherPack FAQ \u2014 Pricing, Self-Host, FIRST, and More"
+description: 'Answers to common questions: Is GatherPack free? Can I self-host? How
+  is it different from TeamConvene? Pricing, features, and roadmap.'
+layout: default
+sitemap_priority: '0.8'
+sitemap_change_frequency: weekly
+last_modified_at: '2026-09-17'
+---
+
+<h1>Frequently Asked Questions</h1>
+
+<%= render "definition" %>
+
+<p class="lead">Short, citable answers to the questions we hear most — whether you're evaluating GatherPack for a FIRST team, a church, or a nonprofit. Each answer is 40–60 words, plain language first, with a link to dig deeper.</p>
+
+<nav aria-label="FAQ groups" class="card mb-4">
+  <div class="card-body">
+    <p class="mb-2 fw-semibold">Jump to:</p>
+    <ul class="mb-0">
+      <li><a href="#general">General</a></li>
+      <li><a href="#self-hosting">Self-Hosting &amp; Hosting</a></li>
+      <li><a href="#features">Features &amp; Roadmap</a></li>
+      <li><a href="#teams">Teams &amp; Use Cases</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section id="general" class="card" aria-labelledby="general-heading">
+  <div class="card-header">
+    <h2 id="general-heading">General</h2>
+  </div>
+  <div class="card-body">
+    <h3 id="what-is-gatherpack" class="h5">What is GatherPack?</h3>
+    <p>GatherPack is free, open-source group management software for teams, clubs, churches, and nonprofits — members, events, finances, and communications in one place. Self-host free under the MIT license or use affordable managed hosting via Sledgehammer Infosystems. <a href="/about/">Learn more about the story →</a></p>
+
+    <h3 id="is-gatherpack-free" class="h5">Is GatherPack free?</h3>
+    <p>Yes. The software is MIT-licensed (SPDX: <code>MIT</code>) and free to self-host on your own server at no license cost. Managed hosting is a separate, paid option if you’d rather not run servers — Standard $50/mo, Custom $100/mo + plugins, with a significant discount for FIRST teams. <a href="/open-source/">Open source details →</a></p>
+
+    <h3 id="who-is-it-for" class="h5">Who is GatherPack for?</h3>
+    <p>Any people-powered group that’s outgrown spreadsheets and group chats: FIRST Robotics teams, youth clubs, churches, nonprofits, and sports leagues from 10 to 500 people. GatherPack handles roster, calendar, bookkeeping, and announcements so volunteers spend time with people, not paperwork. <a href="/features/">See features →</a></p>
+  </div>
+</section>
+
+<section id="self-hosting" class="card" aria-labelledby="self-hosting-heading">
+  <div class="card-header">
+    <h2 id="self-hosting-heading">Self-Hosting &amp; Hosting</h2>
+  </div>
+  <div class="card-body">
+    <h3 id="can-self-host" class="h5">Can I self-host GatherPack?</h3>
+    <p>Yes — that’s the point. Clone <code>https://github.com/GatherPack/gatherpack</code> and run the same GatherPack you’d get hosted, with full data ownership and no feature gates. You handle server, updates, backups, and Stripe setup. Community support via GitHub and Discord. <a href="/open-source/#self-host">Self-host guide →</a></p>
+
+    <h3 id="hosting-cost" class="h5">How does managed hosting work and what does it cost?</h3>
+    <p>Sledgehammer Infosystems hosts, updates, backs up, and supports GatherPack for you, including Stripe integration for dues and donations. Standard is $50/mo, Custom is $100/mo plus plugin development when you need workflow-specific extensions. FIRST teams are hosted at a significant discount. <a href="/hosting/">Hosting &amp; pricing →</a></p>
+
+    <h3 id="switch-hosting" class="h5">Can we switch between self-host and managed?</h3>
+    <p>Yes. Both paths run the same open-source software, so your data stays portable. Start self-hosted and move to managed when you want support, or vice versa. Ask on <a href="https://discord.gg/r3fmNDVn3N" target="_blank" rel="noopener">Discord</a> or <a href="/contact/">contact us</a> for migration help. <a href="/hosting/#what-included">What’s included →</a></p>
+  </div>
+</section>
+
+<section id="features" class="card" aria-labelledby="features-heading">
+  <div class="card-header">
+    <h2 id="features-heading">Features &amp; Roadmap</h2>
+  </div>
+  <div class="card-body">
+    <h3 id="dues-payments" class="h5">Does GatherPack support dues, donations, and payments?</h3>
+    <p>Yes. A simple ledger with tagged transactions, receipt and invoice uploads, and Stripe-powered online payments for cards and bank transfers today. Zeffy, PayPal, and Venmo, plus automatic bank-pull imports, are on the roadmap with explicit dates so you know what’s next. <a href="/features/finance/">Finance details →</a></p>
+
+    <h3 id="available-now" class="h5">What features are available now vs. on the roadmap?</h3>
+    <p>Available now: roster and teams, event RSVPs and shifts, time-clock kiosk with PIN/barcode/RFID, ledger with receipts, Stripe payments, team-scoped announcements with email digests, and custom reports. On the roadmap: multi-channel messaging, notifications, actions, hooks, Google Calendar sync, and more rails. <a href="/roadmap/">Full roadmap →</a></p>
+
+    <h3 id="calendar-sync" class="h5">Will my calendar sync to Google Calendar?</h3>
+    <p>Not yet. The internal calendar already handles team-scoped events, RSVPs, shifts, and check-in. Google Calendar display sync and deeper integrations are a confident “next” on the roadmap, not a hidden gap — we list timing explicitly at <a href="/roadmap/">/roadmap</a>. <a href="/features/events/">Event details →</a></p>
+  </div>
+</section>
+
+<section id="teams" class="card" aria-labelledby="teams-heading">
+  <div class="card-header">
+    <h2 id="teams-heading">Teams &amp; Use Cases</h2>
+  </div>
+  <div class="card-body">
+    <h3 id="vs-teamconvene" class="h5">How is GatherPack different from TeamConvene?</h3>
+    <p>GatherPack is open source and self-hostable under the MIT license; TeamConvene is SaaS-only. That means you own your data, can run GatherPack for free, and can extend it via reports, actions, and hooks. TeamConvene targets robotics teams and clubs as one of four products; GatherPack’s sole focus is group management. <a href="/open-source/">Why open source matters →</a></p>
+
+    <h3 id="first-specific" class="h5">Does GatherPack work for FIRST Robotics teams specifically?</h3>
+    <p>Yes — it was built for them. GatherPack started as a FIRST mentor’s fix for scattered build-season logistics in 2014 and now handles roster, subteams, shop time-clock, fundraising, and competition logistics for FRC/FTC workflows. Self-host free or use discounted managed hosting for FIRST. <a href="/use-cases/first-robotics/">FIRST case →</a></p>
+
+    <h3 id="need-every-feature" class="h5">Do we need to use every feature?</h3>
+    <p>No. Many groups start with roster and calendar, add finance when dues season arrives, and adopt automation when they want custom reporting. GatherPack works a la carte or as a full stack, so a small youth club and a 500-person nonprofit can both start simple. <a href="/features/">Explore features →</a></p>
+  </div>
+</section>
+
+<section id="more-help" class="card" aria-labelledby="more-help-heading">
+  <div class="card-header">
+    <h2 id="more-help-heading">Still have a question?</h2>
+  </div>
+  <div class="card-body">
+    <p>We’d rather answer than guess. If your question isn’t here, check the guides linked above or reach out — we use a few light qualifying questions (org type, size, host interest) to route you to the right help faster.</p>
+    <p class="mb-0"><a href="/contact/">Contact us →</a> · <a href="/roadmap/">Roadmap with dates</a> · <a href="/open-source/">Open source pillar</a> · <a href="/hosting/">Hosting &amp; pricing</a></p>
+  </div>
+</section>
+
+<section id="cta" aria-labelledby="cta-heading">
+  <h2 id="cta-heading" class="visually-hidden">Get started</h2>
+  <%= render "beta_cta" %>
+</section>
+
+<p class="small text-muted">Explore: <a href="/features/">Features</a> · <a href="/use-cases/first-robotics/">FIRST Robotics</a> · <a href="/use-cases/nonprofits/">Nonprofits</a> · <a href="/about/">About timeline</a> · <a href="/updates/">Updates</a></p>

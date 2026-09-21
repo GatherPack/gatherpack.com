@@ -1,0 +1,125 @@
+---
+title: "The GatherPack Story, Extended \u2014 From Sticky Notes to Open Source"
+description: "The extended GatherPack origin story: how scattered spreadsheets and\
+  \ a volunteer\u2019s quick fix became a decade-long backbone, rebuilt by students\
+  \ as MIT-licensed open source."
+layout: default
+published_time: 2026-09-16 00:00:00+00:00
+modified_time: 2026-09-16 00:00:00+00:00
+sitemap_priority: '0.6'
+sitemap_change_frequency: yearly
+last_modified_at: '2026-09-16'
+---
+
+<article>
+<h1>The GatherPack Story, Extended</h1>
+
+<p class="small text-muted"><time datetime="2026-09-16">September 16, 2026</time> · By <a href="https://brad-thompson.com" target="_blank" rel="noopener">Brad Thompson</a>, via <a href="https://sledgehammerinfosystems.com" target="_blank" rel="noopener">Sledgehammer Infosystems</a> · <a href="/about/">About timeline</a></p>
+
+<%= render "definition" %>
+
+<p class="lead">If you only remember one paragraph, remember this: GatherPack started because information lived in the wrong places — spreadsheets on one laptop, sticky notes on a wall, and the heads of whoever happened to be at the meeting.</p>
+
+<section id="problem" class="card" aria-labelledby="problem-heading">
+  <div class="card-header">
+    <h2 id="problem-heading"><time datetime="2014">2014</time> — The problem</h2>
+  </div>
+  <div class="card-body">
+    <p>A <a href="https://boilerinvasion.org" target="_blank" rel="noopener">FIRST Robotics team</a> had the classic people-powered-group problem. Attendance records lived in one volunteer’s spreadsheet. Fundraising progress lived in another. Competition logistics — hotels, t-shirt sizes, transportation — lived partly on paper and partly in memory. When someone asked “who’s actually coming Saturday?”, the answer required tracking down the right person, not opening the right page.</p>
+    <p class="mb-0">That’s the gap GatherPack still closes today: one home for members, events, finances, and communication that everyone in the organization can find — not just the few people who know where things are (<a href="/">homepage problem statement</a>).</p>
+  </div>
+</section>
+
+<section id="first-fix" class="card" aria-labelledby="first-fix-heading">
+  <div class="card-header">
+    <h2 id="first-fix-heading"><time datetime="2014-09">Fall 2014–2015</time> — The first fix</h2>
+  </div>
+  <div class="card-body">
+    <p><a href="https://brad-thompson.com" target="_blank" rel="noopener">One volunteer web developer</a> built a small internal tool — just enough to get through the season. Roster, a shared calendar, and basic bookkeeping in one database. It wasn’t meant to be a product; it was meant to stop re-typing the same names into five places.</p>
+    <p class="mb-0">The fix stuck because it respected how volunteers actually work: leaders set up teams, members keep their own info current, and the organization keeps the record — not a single gatekeeper.</p>
+  </div>
+</section>
+
+<section id="decade" class="card" aria-labelledby="decade-heading">
+  <div class="card-header">
+    <h2 id="decade-heading"><time datetime="2015">2015–2024</time> — Ten years in production</h2>
+  </div>
+  <div class="card-body">
+    <p>That tool became daily infrastructure for <a href="https://westside-robotics.info" target="_blank" rel="noopener">Westside Robotics</a>, an organization that quadrupled in size across the decade. Features weren’t roadmap tickets; they were responses to build-season pain: a time-clock kiosk with PIN/barcode/RFID so students could clock in at the shop and mentors could bulk clock-out a period, a tagged ledger with Stripe so fundraising didn’t require a second accounting app, team-scoped announcements with email digests so families actually saw the update.</p>
+    <p class="mb-0">By 2024 the codebase showed its age — the original <code>source/_*.erb</code> pattern outgrew its scaffolding. Rather than patch another year, we rebuilt.</p>
+  </div>
+</section>
+
+<section id="rebuild" class="card" aria-labelledby="rebuild-heading">
+  <div class="card-header">
+    <h2 id="rebuild-heading"><time datetime="2024">2024</time> — Rebuilt as GatherPack, in the open</h2>
+  </div>
+  <div class="card-body">
+    <p>When the original tool showed its age, the same developer and a few students rebuilt it as GatherPack — now as general group management software flexible enough for a 10-person club or a 500-person nonprofit, and open source under the <a href="https://github.com/GatherPack/gatherpack/blob/main/LICENSE" target="_blank" rel="noopener">MIT license</a> (SPDX: <code>MIT</code>). <a href="/features/">Five pillars</a> — <a href="/features/members/">members</a>, <a href="/features/events/">events</a>, <a href="/features/finance/">finance</a>, <a href="/features/communication/">communication</a>, <a href="/features/automation/">automation</a> — share one roster so you aren’t stitching CSVs.</p>
+    <p>Open source is a decision about ownership: your data stays yours, your server stays yours, and if Sledgehammer stops hosting you, the software and your data still go with you. See <a href="/open-source/">/open-source</a> for <code>Self-host Free vs Managed</code> and the GitHub at <a href="https://github.com/GatherPack/gatherpack" target="_blank" rel="noopener">GatherPack/gatherpack</a>.</p>
+    <img src="/images/ss-directory.png" alt="GatherPack member directory — the shared roster that replaced scattered spreadsheets" width="826" height="826" loading="lazy" style="width:100%;max-width:560px;height:auto;display:block;margin:1rem auto 0;" class="rounded border">
+  </div>
+</section>
+
+<section id="today" class="card" aria-labelledby="today-heading">
+  <div class="card-header">
+    <h2 id="today-heading"><time datetime="2026-09">2026</time> — Where we are</h2>
+  </div>
+  <div class="card-body">
+    <p>GatherPack has been in production <time datetime="2024">since 2024</time> (predecessor <time datetime="2014">since 2014</time>). Two organizations are live, six more are evaluating. We keep the numbers conservative until an opt-in “register your GatherPack server” phone-home can share honest membership totals — that mechanism is on the roadmap as a lightweight, privacy-respecting opt-in.</p>
+    <p>Proof lives where you can verify it: live org sites <a href="https://westside-robotics.info" target="_blank" rel="noopener">Westside Robotics</a> and <a href="https://www.team5924.org/" target="_blank" rel="noopener">Golden Gate Robotics</a>, plus public activity at <a href="https://github.com/GatherPack/gatherpack" target="_blank" rel="noopener">github.com/GatherPack/gatherpack</a> and <a href="https://discord.gg/r3fmNDVn3N" target="_blank" rel="noopener">Discord</a>.</p>
+    <div class="row align-items-center justify-content-center text-center g-3 mt-3">
+      <div class="col-6 col-md-3">
+        <a href="https://westside-robotics.info" target="_blank" rel="noopener">
+          <img src="/images/westsideRoboticsMark.png" alt="Westside Robotics logo" width="299" height="298" loading="lazy" class="logo" style="max-width:110px;height:auto;">
+        </a>
+        <div class="small text-muted mt-1">Westside Robotics</div>
+      </div>
+      <div class="col-6 col-md-3">
+        <a href="https://www.team5924.org/" target="_blank" rel="noopener">
+          <img src="/images/5924.webp" alt="Golden Gate Robotics logo" width="763" height="601" loading="lazy" class="logo" style="max-width:110px;height:auto;">
+        </a>
+        <div class="small text-muted mt-1">Golden Gate Robotics</div>
+      </div>
+    </div>
+    <p class="mb-0 mt-3">Want the concise version? The <a href="/about/">About timeline</a> has the dated milestones with <code>&lt;time&gt;</code>, and the <a href="/roadmap/">roadmap</a> shows what’s next.</p>
+  </div>
+</section>
+
+<section id="faq" class="card" aria-labelledby="faq-heading">
+  <div class="card-header">
+    <h2 id="faq-heading">Story FAQs</h2>
+  </div>
+  <div class="card-body">
+    <h3 class="h5">Is GatherPack just for FIRST teams?</h3>
+    <p>No — it started there, but now serves youth clubs, churches, nonprofits, and sports leagues with the same roster→events→finance→communication core. See <a href="/use-cases/nonprofits/">nonprofits</a> and <a href="/use-cases/churches/">churches</a>.</p>
+    <h3 class="h5">Who owns GatherPack?</h3>
+    <p><a href="https://brad-thompson.com" target="_blank" rel="noopener">Brad Thompson</a> leads development, published by <a href="https://sledgehammerinfosystems.com" target="_blank" rel="noopener">Sledgehammer Infosystems</a>, source under <a href="https://github.com/GatherPack/gatherpack/blob/main/LICENSE" target="_blank" rel="noopener">MIT</a> at <a href="https://github.com/GatherPack/gatherpack" target="_blank" rel="noopener">GatherPack/gatherpack</a>.</p>
+    <p class="mb-0"><a href="/faq/">All FAQs →</a> · <a href="/roadmap/roadmap-fall-2026/">Fall 2026 roadmap →</a></p>
+  </div>
+</section>
+
+<p class="small text-muted">Next read: <a href="/updates/roadmap-fall-2026/">Roadmap: What’s Shipping Fall 2026</a> · <a href="/updates/">All updates</a></p>
+
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The GatherPack Story, Extended — From Sticky Notes to Open Source",
+  "description": "The extended GatherPack origin story: how scattered spreadsheets and a volunteer’s quick fix became a decade-long backbone, rebuilt by students as MIT-licensed open source.",
+  "author": { "@type": "Person", "name": "Brad Thompson", "url": "https://brad-thompson.com" },
+  "publisher": { "@id": "https://gatherpack.com/#organization" },
+  "mainEntityOfPage": "https://gatherpack.com/updates/gatherpack-story-extended/",
+  "datePublished": "2026-09-16T00:00:00Z",
+  "dateModified": "2026-09-16T00:00:00Z",
+  "image": "https://gatherpack.com/images/logo-cover.svg",
+  "isPartOf": { "@id": "https://gatherpack.com/updates/#collection" }
+}
+</script>
+
+<section id="cta" aria-labelledby="cta-heading">
+  <h2 id="cta-heading" class="visually-hidden">Get started</h2>
+  <%= render "beta_cta" %>
+</section>

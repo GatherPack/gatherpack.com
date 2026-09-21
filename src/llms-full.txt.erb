@@ -1,0 +1,96 @@
+---
+layout: none
+permalink: /llms-full.txt
+sitemap: false
+---
+# GatherPack — Full Reference for LLMs
+
+> <%= site.data.site_metadata.definition %>
+
+- URL: https://gatherpack.com
+- GitHub: https://github.com/GatherPack/gatherpack
+- Discord: https://discord.gg/r3fmNDVn3N
+- Contact: https://gatherpack.com/contact/
+- License: MIT — https://github.com/GatherPack/gatherpack/blob/main/LICENSE (SPDX: MIT)
+- Publisher: Sledgehammer Infosystems (https://sledgehammerinfosystems.com) · Author: Brad Thompson (https://brad-thompson.com) · Email: hello@gatherpack.com
+- History: predecessor 2014 in production for Westside Robotics (https://westside-robotics.info) — quadrupled in size; GatherPack rebuilt 2024 by Brad Thompson + students, open source; 2 orgs live + 6 evaluating (conservative until opt-in phone-home)
+- Social: https://facebook.com/gatherpack, https://twitter.com/trygatherpack, https://www.youtube.com/channel/UC2oVkJ1qlmSQXex69GhsbRg, https://www.linkedin.com/showcase/gatherpack
+
+## What It Is
+
+GatherPack is free, open-source group management software for teams, clubs, churches and nonprofits — manage members, events, finances and communications in one place. Self-host free under MIT or use affordable managed hosting via Sledgehammer Infosystems. Category head keyword cluster: group management software; open-source variant: open source group management software / self-hosted club management.
+
+## Features (all at /features/)
+
+- Members: one searchable roster for every person/team/role, relationships, dietary/shirt/custom fields, member self-serve edits, teams & hierarchy, managers & permissions, badges & titles (org charts on roadmap). Details: /features/members/ — primary term member management software.
+- Events: team-scoped calendar, RSVPs, custom fields (hotel, t-shirts, transportation), shifts & check-in, time-clock kiosk PIN/barcode/RFID, multiple periods, bulk clock-out, birthdays. Roadmap: Google Calendar sync, requirements before check-in, attendance notifications. Details: /features/events/ — event management for teams/clubs.
+- Finance: simple ledger with tagged transactions, receipts/invoice uploads, Stripe for cards/bank transfer (managed handles Stripe); Zeffy/PayPal/Venmo + bank-pull + fiscal sponsorship on roadmap. Tied to people/teams. Details: /features/finance/ — club bookkeeping software.
+- Communication: team-scoped announcements with scheduled publish/expire, email digests + immediate push, content pages for handbooks; roadmap: text, Slack, Discord, unified notifications center, per-member channel prefs. Details: /features/communication/ — team announcement software.
+- Automation & Reports: custom reports (code-snippet today, no-code builder on roadmap), period attendance, volunteer-hours; roadmap: Actions (user-triggered tasks) + Hooks (system-event automation). Details: /features/automation/ — volunteer hours tracking.
+
+Hub page /features/ uses consistent card pattern (icon/screenshot+heading+1–2 sentence desc, no emoji/chip-list aesthetic per constraints), screenshots ss-calendar.png / ss-directory.png with width/height/lazy/alt.
+
+## Self-Host vs Managed Hosting
+
+| Dimension | Self-Host Free | Managed Hosting |
+|---|---|---|
+| License & cost | MIT — $0 + Stripe fees | Standard $50/mo · Custom $100/mo + plugins |
+| Who runs server | You — full source/data | Sledgehammer — updates, backups |
+| Payments | You wire Stripe yourself | Handled for you |
+| Updates & support | Community + GitHub | Supported; Custom adds plugin dev |
+| Best for | Technical teams wanting control | Teams wanting it to just work |
+| FIRST discount | Self-host trivially free | Significant discount at cost |
+
+Full table lives at /open-source/ and /hosting/. Aliases: /self-hosting → /open-source/, /pricing → /hosting/ (301 via /_redirects and meta-refresh canonicals). Philosophy at /hosting/: affordability as feature, First teams discounted significantly, quote for current tiers via /contact/. GitHub canonical is https://github.com/GatherPack/gatherpack (normalize casing).
+
+## Who It's For — Use Cases
+
+- FIRST Robotics (FRC/FTC): roster + shop kiosk + fundraising + competition logistics, team-scoped calendar, time-clock, dues via Stripe. Proof: Westside Robotics + Golden Gate Robotics. → /use-cases/first-robotics/ — primary term FIRST robotics team management software (replaces /first-teams, 301). Also covers FTC/FRC.
+- Nonprofits: volunteer coordination, shifts, events, dues/donations, volunteer-hours for grants. → /use-cases/nonprofits/ — nonprofit membership management software.
+- Churches: families/small groups, congregation roster, gatherings, giving/ledger alongside people. → /use-cases/churches/ — church management software.
+- Youth Clubs: families incl. parent/child links, schedules, dues/receipts, privacy for minors via team scoping. → /use-cases/youth-clubs/ — youth club management software.
+- Sports Leagues: divisions/teams/sub-teams, games/practices/shifts, registration fees, team announcements for rain-outs. → /use-cases/sports-leagues/ — sports league management software.
+
+Homepage persona list at /#personas links to all five. Nav clusters: Features ▾ (5 pillars) · Use Cases ▾ (5) · Open Source · Hosting · About · FAQ · Roadmap · Contact + Get Started CTA.
+
+## Pages & Crawl Map
+
+- / — homepage with proof-forward hero + definition callout (plain HTML, not JS), problem (spreadsheets/sticky notes), proof strip, feature tour (card pattern), openness/self-host pillar, roadmap split (Available now vs On the roadmap), pricing philosophy blurb, timeline teaser, CTA. Single h1 is definition.
+- /features/ — hub: five pillars in consistent card grid, each with screenshot thumb, links to pillars + how-it-fits narrative + proof + FAQ + CTA.
+- /features/members/ — member management software (? Member Management for Teams & Clubs). 300–600w, 1 screenshot, proof strip, FAQ 3, CTA, sibling cross-links.
+- /features/events/ — event management for teams/clubs. RSVP/shifts/check-in/time-tracking + calendar; Google Calendar TODO.
+- /features/finance/ — club bookkeeping software. Ledger, receipts, Stripe + roadmap rails.
+- /features/communication/ — team announcement software. Scoped announcements, email summaries, multi-channel roadmap.
+- /features/automation/ — volunteer hours tracking. Reports, actions, hooks roadmap.
+- /use-cases/first-robotics/ — FIRST robotics team management software. Tailored: build/competition calendar, time-clock kiosk detail, dues, roster. FAQ 3 including vs TeamConvene. 301 from /first-teams.
+- /use-cases/nonprofits/ — nonprofit membership management software.
+- /use-cases/churches/ — church management software.
+- /use-cases/youth-clubs/ — youth club management software.
+- /use-cases/sports-leagues/ — sports league management software.
+- /open-source/ — open source group management software. Definition MIT, why self-host vs managed, self-host free details (clone https://github.com/GatherPack/gatherpack), comparison table, GitHub stats, proof, FAQ.
+- /hosting/ — GatherPack pricing / hosting cost. Philosophy, tiers Standard $50 / Custom $100 + plugins, FIRST discount callout, whats-included, comparison table. Offer JSON-LD (3 offers). Alias /pricing.
+- /about/ — timeline 2014→2026 with <time datetime="">, Person (Brad Thompson) + AboutPage JSON-LD, Organization extended, proof with testimonial placeholders for Review JSON-LD, principles, FAQs. Reuses definition block. Header GatherPack timeline.
+- /faq/ — 8–12 pairs grouped General/Self-Hosting & Hosting/Features & Roadmap/Teams & Use Cases. 40–60w plain answers, FAQPage JSON-LD (12 Qs) + visible HTML via headings (<h3>) not JS-only, TL;DR + Learn more links. Embeds also as 2–3 Qs at each major page with per-page FAQPage.
+- /roadmap/ — living dated roadmap: Available now / Next (Fall 2026 dated: Oct messaging, Nov actions/hooks, Oct Google Calendar, Nov finance rails) / Later (titles/org charts, no-code builder, fiscal sponsorship, etc.) + changelog with <time datetime=""> and article:published_time/modified_time. sitemap lastmod from front-matter/Git.
+- /contact/ — crawlable fallback for Tally modal (https://tally.so/embed/wQAPeG) with HTML alt, qualifying questions org type/size/tech capacity/self-host interest, ContactPage JSON-LD, linked from all CTAs + nav; GEO-citable how to get started.
+- /updates/ — hub CollectionPage, two seed posts: /updates/gatherpack-story-extended/ (story, extended timeline 2014-2026, BlogPosting Person Brad) + /updates/roadmap-fall-2026/ (Fall plan Available now/Next/Later dated, BlogPosting Organization), RSS at /feed.xml, CollectionPage + BlogPosting JSON-LD, monthly freshness + weekly roadmap updates.
+
+Indexable target IA ~16 pages + 2 posts + feed + llms.txt/llms-full.txt + sitemap/robots/manifest + 404.
+
+## Metadata Contract & Layout
+
+Per-page front matter: title ≤60ch keyword-front-loaded, description 120–155ch, optional graph_image (1200×630 cover) with width/height/alt, published_time/modified_time. Layout default.erb emits: <title>, meta description, og:title, og:description (=description), og:url (absolute_url), og:image (cover else logo.png) with width/height/alt, og:locale en_US, og:site_name GatherPack, twitter:card summary_large_image when cover, twitter:title/description/image/alt, canonical, meta robots where needed, article:published_time/modified_time, preconnect/dns-prefetch for plausible.io and kit.fontawesome.com, Google Fonts display=swap, theme-color #6d6753, JSON-LD partial. Single h1 per page, section ids, <main> <nav> <footer> <article> <time>. No JS-only content (Tally has fallback).
+
+Site-wide JSON-LD (_json_ld.erb): Organization (name, url, logo, foundingDate 2014, sameAs from _social.erb, contactPoint), SoftwareApplication (BusinessApplication Web, offers free/MIT + two hosted offers, featureList, screenshot), BreadcrumbList on all sub-pages, FAQPage on /faq + per-page FAQPage for embedded 2–3 Qs, AboutPage + Person on /about, CollectionPage on /features /roadmap /updates, BlogPosting on update posts (supplements inline), WebPage for pillars/use-cases, ContactPage. Validated via validator.schema.org + Rich Results.
+
+## GEO / Crawl Hygiene
+
+- llms.txt at /llms.txt (this file's concise sibling) and /llms-full.txt (this file) — markdown plain, ~1500 tokens vs full, definition reused, audience, feature bullets, self-host vs hosted, links to all hubs + GitHub/Discord/contact, last updated date, reachable, comment pointer in robots.txt.
+- robots.txt: User-agent * Allow /; explicit Allow for GPTBot ClaudeBot PerplexityBot Google-Extended anthropic-ai CCBot plus Sitemap and llms.txt comments; no AI crawler blocked; tester passes. Source: src/robots.txt.
+- sitemap.xml: generated via bridgetown-sitemap, includes all 21 URLs, lastmod via front-matter last_modified_at || GitInspector git log -1 --pretty="format:%cI" || resource.date (not bare File.mtime), priority (1.0 for /, 0.8 hubs, 0.6 leaves) via sitemap_priority and changefreq via sitemap_change_frequency front matter. Valid XML.
+- 404: branded src/404.erb permalink /404.html, noindex, robots noindex, sitemap false, includes nav/search/CTA, breadcrumbs suppressed, semantic landmarks retained. Aligns with AUDIT §7.
+- Redirects: /first-teams → /use-cases/first-robotics/ 301, /self-hosting → /open-source/ 301, /pricing → /hosting/ 301 via src/_redirects (_redirects output) + meta-refresh HTML fallbacks at /first-teams/, /self-hosting/, /pricing/ with canonical + sitemap false/noindex. Documented in src/redirects.erb.
+- Breadcrumbs: visible on every sub-page (Home > Features > Events) via _breadcrumbs.erb + BreadcrumbList JSON-LD from _json_ld.erb.
+- Manifest: src/site.webmanifest name/short_name GatherPack, description = site description, theme_color/background_color #6d6753/#403a22, display standalone, keeps icons/display valid, theme-color meta synced.
+
+Last updated: 2026-09-17

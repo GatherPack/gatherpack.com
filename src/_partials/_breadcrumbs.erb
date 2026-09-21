@@ -1,0 +1,32 @@
+<%# Visible breadcrumbs + BreadcrumbList JSON-LD is in _json_ld.erb %>
+<%
+  url_path = resource.relative_url.to_s
+  segments = url_path.gsub(%r{^/|/$}, "").split("/").reject(&:empty?)
+  # Build crumbs: Home + each segment
+  crumbs = []
+  crumbs << { "label" => "Home", "url" => "/", "current" => segments.empty? }
+  accum = ""
+  segments.each_with_index do |seg, idx|
+    accum += "/#{seg}"
+    label = seg.gsub("-", " ").split.map(&:capitalize).join(" ")
+    label = "FIRST Robotics" if seg == "first-robotics"
+    label = "Open Source" if seg == "open-source"
+    label = "FAQ" if seg == "faq"
+    is_last = idx == segments.length - 1
+    crumbs << { "label" => label, "url" => "#{accum}/", "current" => is_last }
+  end
+%>
+<%# No breadcrumbs on homepage or 404 %>
+<% unless crumbs.length <= 1 || resource.data.permalink == "/404.html" %>
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol>
+    <% crumbs.each do |crumb| %>
+      <% if crumb["current"] %>
+        <li aria-current="page"><%= crumb["label"] %></li>
+      <% else %>
+        <li><a href="<%= crumb["url"] %>"><%= crumb["label"] %></a></li>
+      <% end %>
+    <% end %>
+  </ol>
+</nav>
+<% end %>

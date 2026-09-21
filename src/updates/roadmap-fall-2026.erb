@@ -1,0 +1,113 @@
+---
+title: "Roadmap: What's Shipping Fall 2026 \u2014 GatherPack"
+description: "Fall 2026 roadmap: multi-channel messaging, actions and hooks, Google\
+  \ Calendar sync, and more \u2014 Available now vs Next vs Later with dates."
+layout: default
+published_time: 2026-09-17 00:00:00+00:00
+modified_time: 2026-09-17 00:00:00+00:00
+sitemap_priority: '0.6'
+sitemap_change_frequency: monthly
+last_modified_at: '2026-09-17'
+---
+
+<article>
+<h1>Roadmap: What’s Shipping Fall 2026</h1>
+
+<p class="small text-muted"><time datetime="2026-09-17">September 17, 2026</time> · By GatherPack Team · <a href="/roadmap/">Living roadmap</a></p>
+
+<p class="lead">Fall 2026 is about reaching people where they are and automating the follow-through — without turning the roadmap into an apology for gaps. Here’s what’s <strong>Available now</strong>, what’s <strong>Next</strong> (dated), and what’s <strong>Later</strong> (planned, scoped later).</p>
+
+<section id="available" class="card" aria-labelledby="available-heading">
+  <div class="card-header">
+    <h2 id="available-heading">Available now</h2>
+  </div>
+  <div class="card-body">
+    <p>If you onboard today, these already handle the core: roster and teams with badges, team-scoped calendar with RSVP/shifts/check-in, time-clock kiosk (PIN/barcode/RFID + bulk clock-out + periods), ledger with tagged transactions, receipts and Stripe payments, team-scoped announcements with scheduled publish/expire and email digests, and code-based custom reports.</p>
+    <p class="mb-0">Deep dives: <a href="/features/members/">Members</a> · <a href="/features/events/">Events</a> · <a href="/features/finance/">Finance</a> · <a href="/features/communication/">Communication</a> · <a href="/features/automation/">Automation &amp; reports</a>.</p>
+  </div>
+</section>
+
+<section id="next" class="card" aria-labelledby="next-heading">
+  <div class="card-header">
+    <h2 id="next-heading">Next — dated</h2>
+  </div>
+  <div class="card-body">
+    <h3 class="h5">Communication — multi-channel &amp; notifications</h3>
+    <p>The most-requested gap is reaching people in the channel they actually check. Fall 2026 targets text, Slack, and Discord delivery, unified notification center, and notifications for RSVPs/payments/new members. Per-member channel preferences tie it together. Target: <time datetime="2026-10">October 2026</time>. Track progress on <a href="https://github.com/GatherPack/gatherpack" target="_blank" rel="noopener">GitHub</a> and <a href="https://discord.gg/r3fmNDVn3N" target="_blank" rel="noopener">Discord</a>.</p>
+
+    <h3 class="h5">Automation — actions &amp; hooks</h3>
+    <p>Actions let members trigger custom logic with a button; hooks run automatically on system events (new member, event closed, payment landed). They’re the extensibility that makes “flexible enough for a 10-person club or 500-person nonprofit” real. Target: <time datetime="2026-11">November 2026</time>, with a no-code report builder to follow for non-technical leaders. <a href="/features/automation/">Automation deep dive →</a></p>
+
+    <h3 class="h5">Calendar — Google Calendar sync</h3>
+    <p>Internal calendar already handles RSVPs and shifts; display sync to Google Calendar is the explicit next integration (the old <code>src/index.erb:97</code> TODO we now name). Target: <time datetime="2026-10">October 2026</time>. See <a href="/features/events/">event management</a> for today’s flow.</p>
+
+    <h3 class="h5">Finance — more rails</h3>
+    <p>Stripe today; Zeffy/PayPal/Venmo triage and automatic bank-pull import are next. Target: <time datetime="2026-11">November 2026</time> for triage, bank import early 2027. Fiscal sponsorship (hosted path) moves to Later with scoping. <a href="/features/finance/">Finance →</a></p>
+
+    <p class="mb-0 small text-muted">All “Next” items carry a <time datetime=""> target for freshness signals. The <a href="/roadmap/">living roadmap</a> is the canonical, weekly-updated table; this post is the context.</p>
+  </div>
+</section>
+
+<section id="later" class="card" aria-labelledby="later-heading">
+  <div class="card-header">
+    <h2 id="later-heading">Later — planned</h2>
+  </div>
+  <div class="card-body">
+    <p>Later means we know the shape but not the date — typically larger platform work or human-process dependencies:</p>
+    <ul>
+      <li>Titles &amp; org charts (carry-over from <code>src/first-teams.erb:34</code>)</li>
+      <li>No-code report builder for non-technical leaders</li>
+      <li>Requirements before check-in (eligibility gates) and deeper org-chart-aware scheduling</li>
+      <li>Fiscal sponsorship option for groups without a bank account (hosted)</li>
+    </ul>
+    <p class="mb-0">We keep Later visible rather than footnoted so prospects can plan. When a Later item moves to Next, the <a href="/roadmap/">roadmap</a> and changelog <time datetime="2026-09-17">stamp the change</time>.</p>
+  </div>
+</section>
+
+<section id="freshness" class="card" aria-labelledby="freshness-heading">
+  <div class="card-header">
+    <h2 id="freshness-heading">How we keep this fresh</h2>
+  </div>
+  <div class="card-body">
+    <p>GatherPack’s freshness surface is two-layered: the <a href="/roadmap/">roadmap page</a> is the weekly heartbeat with <code>last updated</code> stamps and <code>&lt;time&gt;</code>, this Updates hub is the monthly archive. Sitemap <code>lastmod</code> should come from front-matter <code>modified_time</code> or Git history, not just <code>File.mtime</code> — that note is for Phase 5 sitemap hygiene but we enforce it here in the content promises.</p>
+    <p class="mb-0">Citable for GEO: “What’s shipping next in GatherPack?” can cite this post’s Available now / Next / Later split with dates; “When was the roadmap updated?” cites the <time datetime="2026-09-17">2026-09-17</time> stamp.</p>
+  </div>
+</section>
+
+<section id="faq" class="card" aria-labelledby="faq-heading">
+  <div class="card-header">
+    <h2 id="faq-heading">Roadmap FAQs</h2>
+  </div>
+  <div class="card-body">
+    <h3 class="h5">Can I affect what ships next?</h3>
+    <p>Yes. Live and evaluating orgs shape priority — open an issue on <a href="https://github.com/GatherPack/gatherpack" target="_blank" rel="noopener">GitHub</a> or <a href="https://discord.gg/r3fmNDVn3N" target="_blank" rel="noopener">Discord</a>, or <a href="/contact/">use the contact form</a> with org type and workflow.</p>
+    <h3 class="h5">Will the roadmap stay honest if dates slip?</h3>
+    <p>Yes — we update the stamp and move the item with a changelog entry. A date that slips is more trustworthy than a footnote that hides the gap. See <a href="/roadmap/#changelog">roadmap changelog</a>.</p>
+    <p class="mb-0"><a href="/faq/">All FAQs →</a> · <a href="/updates/gatherpack-story-extended/">The extended story →</a></p>
+  </div>
+</section>
+
+<p class="small text-muted">Back to: <a href="/updates/">Updates hub</a> · <a href="/roadmap/">Living roadmap</a> · <a href="/features/">Features</a></p>
+
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Roadmap: What's Shipping Fall 2026 — GatherPack",
+  "description": "Fall 2026 roadmap: multi-channel messaging, actions and hooks, Google Calendar sync, and more — Available now vs Next vs Later with dates.",
+  "author": { "@type": "Organization", "name": "GatherPack", "@id": "https://gatherpack.com/#organization" },
+  "publisher": { "@id": "https://gatherpack.com/#organization" },
+  "mainEntityOfPage": "https://gatherpack.com/updates/roadmap-fall-2026/",
+  "datePublished": "2026-09-17T00:00:00Z",
+  "dateModified": "2026-09-17T00:00:00Z",
+  "image": "https://gatherpack.com/images/ss-calendar.png",
+  "isPartOf": { "@id": "https://gatherpack.com/updates/#collection" }
+}
+</script>
+
+<section id="cta" aria-labelledby="cta-heading">
+  <h2 id="cta-heading" class="visually-hidden">Get started</h2>
+  <%= render "beta_cta" %>
+</section>

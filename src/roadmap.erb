@@ -1,0 +1,189 @@
+---
+title: "GatherPack Roadmap \u2014 Available Now, Next, Later"
+description: 'What''s available now and what''s next: multi-channel messaging, notifications,
+  actions, hooks, calendar integration and more. Living, dated roadmap.'
+layout: default
+published_time: 2026-09-17 00:00:00+00:00
+modified_time: 2026-09-17 00:00:00+00:00
+sitemap_priority: '0.8'
+sitemap_change_frequency: weekly
+last_modified_at: '2026-09-17'
+---
+
+<h1>Roadmap</h1>
+
+<p class="lead">GatherPack is in active development with a visible plan. We split <strong>Available now</strong> from <strong>On the roadmap</strong> confidently — no asterisk footnotes, no apology. Check back here for dated updates; <code>last updated</code> is <time datetime="2026-09-17">September 17, 2026</time>.</p>
+
+<p class="small text-muted">How to read: <strong>Available now</strong> ships today; <strong>Next</strong> is intentional and dated next; <strong>Later</strong> is planned with clear dependencies. All use <code>&lt;time datetime=""&gt;</code> for freshness signals and <code>article:published_time</code>/<code>modified_time</code> in the head.</p>
+
+<section id="available-now" class="card" aria-labelledby="available-now-heading">
+  <div class="card-header">
+    <h2 id="available-now-heading">Available now</h2>
+  </div>
+  <div class="card-body">
+    <div class="row g-4">
+      <div class="col-12 col-md-6">
+        <h3 class="h5"><i class="fa-solid fa-circle-check text-success" aria-hidden="true"></i> Members &amp; roster</h3>
+        <ul class="mb-0">
+          <li>Member management — roster, teams, managers, badges</li>
+          <li>Hierarchy and role scoping per team</li>
+          <li>Family/relationship links, dietary, shirt sizes, custom fields</li>
+        </ul>
+        <p class="small text-muted mb-0 mt-2"><a href="/features/members/">Members details →</a></p>
+      </div>
+      <div class="col-12 col-md-6">
+        <h3 class="h5"><i class="fa-solid fa-circle-check text-success" aria-hidden="true"></i> Events &amp; time tracking</h3>
+        <ul class="mb-0">
+          <li>Team-scoped calendar, RSVP, custom fields, shifts &amp; check-in</li>
+          <li>Kiosk with PIN/barcode/RFID, multiple periods, bulk clock-out</li>
+          <li>Calendar UI today; sync on the roadmap (see Next)</li>
+        </ul>
+        <p class="small text-muted mb-0 mt-2"><a href="/features/events/">Events details →</a></p>
+      </div>
+      <div class="col-12 col-md-6">
+        <h3 class="h5"><i class="fa-solid fa-circle-check text-success" aria-hidden="true"></i> Finance</h3>
+        <ul class="mb-0">
+          <li>Ledger, tagged transactions, receipts &amp; invoices</li>
+          <li>Stripe payments — cards, bank transfer, and more today</li>
+        </ul>
+        <p class="small text-muted mb-0 mt-2"><a href="/features/finance/">Finance details →</a></p>
+      </div>
+      <div class="col-12 col-md-6">
+        <h3 class="h5"><i class="fa-solid fa-circle-check text-success" aria-hidden="true"></i> Communication</h3>
+        <ul class="mb-0">
+          <li>Team-scoped announcements with scheduled publish/expire</li>
+          <li>Email summaries (digest) and immediate push for urgent posts</li>
+          <li>Content pages for handbooks and persistent resources</li>
+        </ul>
+        <p class="small text-muted mb-0 mt-2"><a href="/features/communication/">Communication details →</a></p>
+      </div>
+      <div class="col-12">
+        <h3 class="h5"><i class="fa-solid fa-circle-check text-success" aria-hidden="true"></i> Automation</h3>
+        <ul class="mb-0">
+          <li>Custom reports (code-snippet based) over roster/attendance/finance</li>
+          <li>Period-based attendance and volunteer-hours reporting</li>
+        </ul>
+        <p class="small text-muted mb-0 mt-2"><a href="/features/automation/">Automation &amp; reports →</a></p>
+      </div>
+    </div>
+    <p class="mt-3 mb-0 small text-muted">All “Available now” items are running in production for two orgs live, six evaluating — same live-fire expectations we hold for hosting reliability.</p>
+  </div>
+</section>
+
+<section id="next" class="card" aria-labelledby="next-heading">
+  <div class="card-header">
+    <h2 id="next-heading">Next <span class="badge bg-warning text-dark ms-2">Fall 2026</span></h2>
+  </div>
+  <div class="card-body">
+    <p>These are the confident next steps — intentionally next, with scope and target quarter visible. They reuse the <em>Coming Soon</em> badges that used to be footnoted on the homepage (<code>src/index.erb:178,188,221,230</code>).</p>
+    <div class="row g-4">
+      <div class="col-12 col-md-6">
+        <h3 class="h5">Communication</h3>
+        <ul>
+          <li>Multi-channel messaging — text, Slack, Discord</li>
+          <li>Notifications for RSVPs, payments, new members</li>
+          <li>Unified notifications center with per-member channel prefs</li>
+        </ul>
+        <p class="small text-muted">Target: <time datetime="2026-10">October 2026</time>. Tracked issue: <a href="https://github.com/GatherPack/gatherpack" target="_blank" rel="noopener">GitHub</a>.</p>
+      </div>
+      <div class="col-12 col-md-6">
+        <h3 class="h5">Automation</h3>
+        <ul>
+          <li>Actions — user-triggered custom tasks scoped to a team</li>
+          <li>Hooks — automatic logic on system events (member joined, payment landed)</li>
+        </ul>
+        <p class="small text-muted">Target: <time datetime="2026-11">November 2026</time>. No-code report builder follows hooks.</p>
+      </div>
+      <div class="col-12 col-md-6">
+        <h3 class="h5">Calendar</h3>
+        <ul>
+          <li>Google Calendar sync (display) — the most-requested integration (<code>src/index.erb:97</code> TODO)</li>
+        </ul>
+        <p class="small text-muted">Target: <time datetime="2026-10">October 2026</time>.</p>
+      </div>
+      <div class="col-12 col-md-6">
+        <h3 class="h5">Finance</h3>
+        <ul>
+          <li>Additional rails triage — Zeffy, PayPal, Venmo</li>
+          <li>Automatic bank-pull transaction import</li>
+        </ul>
+        <p class="small text-muted">Target: <time datetime="2026-11">November 2026</time> for triage; import in early 2027.</p>
+      </div>
+    </div>
+    <p class="mb-0"><a href="/updates/roadmap-fall-2026/">See the Fall 2026 roadmap post →</a></p>
+  </div>
+</section>
+
+<section id="later" class="card" aria-labelledby="later-heading">
+  <div class="card-header">
+    <h2 id="later-heading">Later</h2>
+  </div>
+  <div class="card-body">
+    <p>Planned with clear intent but without a hard date — dependencies or scoping still in flight.</p>
+    <div class="row g-4">
+      <div class="col-12 col-md-6">
+        <h3 class="h5">Organization</h3>
+        <ul class="mb-0">
+          <li>Titles &amp; org charts (<code>src/first-teams.erb:34</code> carry-over)</li>
+          <li>No-code report builder for non-technical leaders</li>
+          <li>Fiscal sponsorship option for groups without a bank account (hosted path)</li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-6">
+        <h3 class="h5">Platform</h3>
+        <ul class="mb-0">
+          <li>Deeper org-chart-aware scheduling</li>
+          <li>Requirements before check-in (eligibility gates)</li>
+          <li>Attendance notifications (missing check-in, etc.)</li>
+        </ul>
+      </div>
+    </div>
+    <p class="small text-muted mt-3 mb-0">Every Later item originated as a “Coming Soon” or TODO in the prior single-page site; we keep them visible with context instead of hiding gaps.</p>
+  </div>
+</section>
+
+<section id="changelog" class="card" aria-labelledby="changelog-heading">
+  <div class="card-header">
+    <h2 id="changelog-heading">Changelog</h2>
+  </div>
+  <div class="card-body">
+    <p class="small text-muted">Dated entries give crawlers a revisit reason and prospects confidence the product is actively developed. Each entry uses <code>&lt;time datetime=""&gt;</code> and <code>article:modified_time</code>.</p>
+    <article class="mb-4">
+      <h3 class="h5 mb-1"><time datetime="2026-09-17">2026-09-17</time> — Phase 4 launch: Trust &amp; depth pages</h3>
+      <p class="mb-0">Published <a href="/faq/">/faq</a> (12 pairs, FAQPage), <a href="/about/">/about</a> timeline with Person/AboutPage, <a href="/contact/">/contact</a> crawlable fallback with qualifying form, this living roadmap, and <a href="/updates/">/updates</a> hub with two seed posts and RSS. Roadmap split reframed from asterisk footnote to Available now / Next / Later.</p>
+    </article>
+    <article class="mb-4">
+      <h3 class="h5 mb-1"><time datetime="2026-09-17">2026-09-17</time> — Phase 3: Core IA expansion</h3>
+      <p class="mb-0">Shipped <a href="/features/">/features</a> hub + 5 pillars, 5 use-case pages (including <a href="/use-cases/first-robotics/">FIRST</a> merging <code>first-teams</code>), <a href="/open-source/">/open-source</a> and <a href="/hosting/">/hosting</a> pillars with comparison table and proof strip.</p>
+    </article>
+    <article class="mb-4">
+      <h3 class="h5 mb-1"><time datetime="2026-09-16">2026-09-16</time> — Foundations</h3>
+      <p class="mb-0">Per-page metadata contract, JSON-LD Organization+SoftwareApplication+BreadcrumbList, definition callout, card system, nav/footer/breadcrumbs, and manifest hygiene.</p>
+    </article>
+    <article class="mb-0">
+      <h3 class="h5 mb-1"><time datetime="2024">2024</time> — GatherPack first release</h3>
+      <p class="mb-0">Rebuild from decade-old predecessor (in production <time datetime="2014">since 2014</time>) as open-source group management. Two orgs live, six evaluating at launch. <a href="/updates/gatherpack-story-extended/">Full story →</a></p>
+    </article>
+    <p class="small text-muted mt-4 mb-0">Last updated: <time datetime="2026-09-17">2026-09-17</time> · Next review: weekly during active build season. Sitemap <code>lastmod</code> should mirror front-matter <code>modified_time</code> per Phase 5 hygiene, not just <code>File.mtime</code>.</p>
+  </div>
+</section>
+
+<section id="faq" class="card" aria-labelledby="faq-heading">
+  <div class="card-header">
+    <h2 id="faq-heading">Roadmap FAQs</h2>
+  </div>
+  <div class="card-body">
+    <h3 class="h5">Is the roadmap a promise or a wish list?</h3>
+    <p>Available now ships today; Next has a target quarter and linked tracker; Later is planned but not yet dated. We keep dates honest and update this page weekly so you can plan without an asterisk footnote.</p>
+    <h3 class="h5">Can I affect priority?</h3>
+    <p>Yes — requests from live and evaluating orgs shape Next. Open an issue on <a href="https://github.com/GatherPack/gatherpack" target="_blank" rel="noopener">GitHub</a> or <a href="https://discord.gg/r3fmNDVn3N" target="_blank" rel="noopener">Discord</a>, or <a href="/contact/">tell us your workflow</a>.</p>
+    <p class="mb-0"><a href="/faq/">All FAQs →</a> · <a href="/updates/roadmap-fall-2026/">Fall 2026 roadmap post →</a></p>
+  </div>
+</section>
+
+<section id="cta" aria-labelledby="cta-heading">
+  <h2 id="cta-heading" class="visually-hidden">Get started</h2>
+  <%= render "beta_cta" %>
+</section>
+
+<p class="small text-muted">Explore: <a href="/features/">Features</a> · <a href="/open-source/">Open Source</a> · <a href="/hosting/">Hosting</a> · <a href="/updates/">Updates</a> · <a href="/faq/">FAQ</a></p>

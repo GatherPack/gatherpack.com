@@ -1,0 +1,405 @@
+<%# Phase 1.2+4/5 — site-wide JSON-LD: Organization + SoftwareApplication + BreadcrumbList + FAQPage/AboutPage/Person/CollectionPage/BlogPosting %>
+<%
+  definition = site.data.site_metadata.definition
+  site_url = "https://gatherpack.com"
+  logo_url = "#{site_url}/images/logo.svg"
+  url_path = resource.relative_url.to_s
+  segments = url_path.gsub(%r{^/|/$}, "").split("/").reject(&:empty?)
+  breadcrumb_items = []
+  breadcrumb_items << { "name" => "Home", "url" => "#{site_url}/" }
+  accum = ""
+  segments.each_with_index do |seg, idx|
+    accum += "/#{seg}"
+    label = seg.gsub("-", " ").split.map(&:capitalize).join(" ")
+    label = "FIRST Robotics" if seg == "first-robotics"
+    label = "Open Source" if seg == "open-source"
+    label = "FAQ" if seg == "faq"
+    breadcrumb_items << { "name" => label, "url" => "#{site_url}#{accum}/" }
+  end
+  is_home = segments.empty?
+  is_faq = segments == ["faq"]
+  is_about = segments == ["about"]
+  is_contact = segments == ["contact"]
+  is_roadmap = segments == ["roadmap"]
+  is_features_hub = segments == ["features"]
+  is_feature_pillar = segments[0] == "features" && segments.length == 2
+  is_use_case = segments[0] == "use-cases" && segments.length == 2
+  is_open_source = segments == ["open-source"]
+  is_hosting = segments == ["hosting"]
+  is_updates_hub = segments == ["updates"]
+  is_update_post = segments[0] == "updates" && segments.length == 2
+  is_404 = resource.data.permalink == "/404.html" || url_path == "/404.html"
+
+  # Embedded FAQ entities per page — mirrors visible <section id="faq"> HTML
+  embedded_faq = nil
+  if !is_faq && !is_404
+    case url_path
+    when "/features/"
+      embedded_faq = [
+        { "q" => "Do I have to use every feature?", "a" => "No. Many teams start with roster and calendar, then add finance when dues come due and automation when they want custom reports. GatherPack works a la carte or as a full stack." },
+        { "q" => "Can I try it before moving my data?", "a" => "Yes — schedule a demo or check the GitHub repo to run it locally. You can import a roster from CSV and see how teams and events fit together before committing." },
+        { "q" => "What about features marked 'coming soon'?", "a" => "We split 'available now' from 'on the roadmap' intentionally. If you lean on texting, Slack/Discord, or bank pulls, check the roadmap for where those land — we keep dates there." }
+      ]
+    when "/features/members/"
+      embedded_faq = [
+        { "q" => "Can members update their own information?", "a" => "Yes. People can keep their own contact info, relationships, and custom fields current — leaders review rather than retype everything." },
+        { "q" => "How do teams and sub-teams work?", "a" => "Create teams, nest sub-teams, and assign managers who can handle their slice — events, attendance, and announcements scoped to just that team." },
+        { "q" => "What about privacy for families and minors?", "a" => "You control what each team can see. Sensitive fields stay with authorized managers; directory views respect team boundaries." }
+      ]
+    when "/features/events/"
+      embedded_faq = [
+        { "q" => "Can I limit who sees each event?", "a" => "Yes — events are scoped to teams. A small-group meeting only shows to that team; an all-hands competition shows to the whole org." },
+        { "q" => "How does time tracking work?", "a" => "Use the kiosk at your shop or meeting space. Members clock in/out with PIN, barcode, or RFID; managers can bulk clock-out a whole period at once." },
+        { "q" => "Will my calendar sync to Google Calendar?", "a" => "Not yet — calendar display sync is on the roadmap as a confident next, not a hidden gap. The internal calendar already supports RSVPs and shifts today." }
+      ]
+    when "/features/finance/"
+      embedded_faq = [
+        { "q" => "Can we accept dues and donations online?", "a" => "Yes — Stripe handles cards and bank transfers today. If you need Zeffy/PayPal/Venmo, that's next on the roadmap with dates." },
+        { "q" => "Do I need managed hosting for payments?", "a" => "No. Self-hosters can configure Stripe themselves. Managed hosting just means Sledgehammer sets it up and keeps it updated for you." },
+        { "q" => "Can I track budgets with tags?", "a" => "Yes — tag each transaction and filter the ledger for quick budget views before turning to custom reports." }
+      ]
+    when "/features/communication/"
+      embedded_faq = [
+        { "q" => "Can I target a message to one team only?", "a" => "Yes. Announcements are scoped to teams you choose — handy for a coach, a small-group leader, or a finance committee." },
+        { "q" => "Do you replace email or Slack?", "a" => "We complement them. Today we do team announcements and email digests; Slack/Discord/text are on the roadmap so you can keep the channels people already check." },
+        { "q" => "Can I schedule posts ahead of time?", "a" => "Yes — set a future publish date and an expiration so posts appear when relevant and don't clutter the feed afterwards." }
+      ]
+    when "/features/automation/"
+      embedded_faq = [
+        { "q" => "Do I need to code to use reports?", "a" => "Today reports are code snippets — perfect for technical teams. A no-code builder is on the roadmap so non-technical leaders can build them directly." },
+        { "q" => "What are actions and hooks?", "a" => "Actions are things a person triggers (run a task with a click); hooks run automatically when a system event happens (new member, payment received)." },
+        { "q" => "Can I export the data?", "a" => "Yes. Because everything lives together, you can pull roster, attendance, and finance into reports instead of stitching CSVs from three apps." }
+      ]
+    when "/use-cases/first-robotics/"
+      embedded_faq = [
+        { "q" => "Can we self-host to keep costs down?", "a" => "Yes — GatherPack is MIT-licensed. Self-host at no cost with full source access, or choose managed hosting at a significantly discounted FIRST rate." },
+        { "q" => "Does it handle time-tracking for shop hours?", "a" => "Yes. The kiosk handles PIN/barcode/RFID check-in, multiple time-clock periods, and bulk clock-out. Reports roll up by period for service hours." },
+        { "q" => "How is GatherPack different from TeamConvene?", "a" => "GatherPack is open source and self-hostable; TeamConvene is SaaS-only. If you want data ownership, cost control, and extensibility via reports, actions, and hooks, that's the trade." }
+      ]
+    when "/use-cases/nonprofits/"
+      embedded_faq = [
+        { "q" => "Can non-technical volunteers use this?", "a" => "Yes — day-to-day roster, events, and announcements are designed for non-technical leaders. Deeper custom reports are code-based today with a no-code builder on the roadmap." },
+        { "q" => "Do we need to self-host?", "a" => "Only if you want to. MIT self-host is free for control and privacy; managed hosting at $50/mo standard or $100/mo custom handles updates, backups, and payments." },
+        { "q" => "Can we track volunteer hours for grants?", "a" => "Yes — kiosk check-in with period-based reports is built for that. Export or use custom reports to roll up hours by team and period." }
+      ]
+    when "/use-cases/churches/"
+      embedded_faq = [
+        { "q" => "Can small-group leaders manage their own roster?", "a" => "Yes — assign managers to a team and they can manage their group's members, events, and announcements without broader access." },
+        { "q" => "Can we track donations and expenses here?", "a" => "Yes. The ledger lives next to the roster, with tags and receipt uploads. Stripe handles online giving today; Zeffy/PayPal/Venmo are on the roadmap." },
+        { "q" => "Is GatherPack appropriate for a small congregation?", "a" => "Yes — flexible enough for a 10-person club or a 500-person org. Start with roster and events; add finance and reporting as you grow." }
+      ]
+    when "/use-cases/youth-clubs/"
+      embedded_faq = [
+        { "q" => "Can parents update their kids' info?", "a" => "Yes — families manage relationships and custom fields themselves, so leaders aren't the bottleneck. Team scoping keeps data private to the right adults." },
+        { "q" => "Can we handle dues online?", "a" => "Yes — Stripe for cards and bank transfer today; Zeffy/PayPal/Venmo on the roadmap." },
+        { "q" => "What about privacy for minors?", "a" => "Access is team-scoped — a family team sees its kids, a leader sees their group. Sensitive fields stay with authorized managers." }
+      ]
+    when "/use-cases/sports-leagues/"
+      embedded_faq = [
+        { "q" => "Can coaches manage only their team?", "a" => "Yes — assign them as managers of that team. They'll see their players, events, and check-ins without access to other teams' rosters or league finances." },
+        { "q" => "Can we collect fees online?", "a" => "Yes — Stripe handles cards and bank transfer today. Need PayPal/Venmo/Zeffy? That's tracked on the roadmap with explicit next steps." },
+        { "q" => "What about rain-outs and last-minute changes?", "a" => "Post a team-scoped announcement and push it immediately, or schedule it to expire when the decision window passes. Weekly digests catch the rest." }
+      ]
+    when "/open-source/"
+      embedded_faq = [
+        { "q" => "Can I really self-host for free?", "a" => "Yes. The MIT license means $0 for the software — you just bring the server. Docs are in the GitHub repo." },
+        { "q" => "What's the catch with managed hosting?", "a" => "No catch — same GatherPack, we just handle servers, updates, backups, and Stripe integration. Standard $50/mo, Custom $100/mo + plugin work." },
+        { "q" => "Is the source actually open?", "a" => "Yes — https://github.com/GatherPack/gatherpack (canonical casing GatherPack/gatherpack). Issues and contributions welcome via GitHub and Discord." }
+      ]
+    when "/hosting/"
+      embedded_faq = [
+        { "q" => "Is there a free way to use GatherPack?", "a" => "Yes — self-host free under the MIT license. No feature gates; same GatherPack either way." },
+        { "q" => "What do managed tiers cost right now?", "a" => "Standard $50/mo, Custom $100/mo plus plugin development, with a significant FIRST discount. Contact for current hosted tiers." },
+        { "q" => "Can we move from hosting to self-host or vice versa?", "a" => "Yes. Because it's the same open-source software, you keep your data and can change how it's run." }
+      ]
+    when "/about/"
+      embedded_faq = [
+        { "q" => "Who built GatherPack?", "a" => "Brad Thompson and student contributors, published by Sledgehammer Infosystems. See the timeline for dates and milestones." },
+        { "q" => "Is GatherPack really open source?", "a" => "Yes — MIT licensed at https://github.com/GatherPack/gatherpack. Same software whether self-hosted or managed." },
+        { "q" => "Can I verify the production history?", "a" => "Yes — the customers link to live org sites, and the repo history is public. That's the E-E-A-T surface we want cited." }
+      ]
+    when "/roadmap/"
+      embedded_faq = [
+        { "q" => "Is the roadmap a promise or a wish list?", "a" => "Available now ships today; Next has a target quarter and linked tracker; Later is planned but not yet dated. We keep dates honest and update weekly." },
+        { "q" => "Can I affect priority?", "a" => "Yes — requests from live and evaluating orgs shape Next. Open an issue on GitHub or Discord, or tell us your workflow via contact." }
+      ]
+    when "/updates/"
+      embedded_faq = [
+        { "q" => "How often will you post?", "a" => "About once a month here, with weekly tweaks to the living roadmap. That gives crawlers a revisit reason beyond the single-page era." },
+        { "q" => "Can I subscribe?", "a" => "Yes — feed.xml is valid RSS/Atom. Each post carries BlogPosting JSON-LD with datePublished and dateModified." }
+      ]
+    end
+  end
+
+  # BlogPosting data for update posts via partial (supplements inline scripts)
+  blog_posting = nil
+  if is_update_post
+    post_title = data.title ? data.title.to_s.gsub('"', '\"') : "GatherPack Update"
+    post_desc = data.description ? data.description.to_s.gsub('"', '\"').gsub("\n", " ") : definition.gsub('"', '\"')
+    pub = data.published_time || "2026-09-17T00:00:00Z"
+    mod = data.modified_time || pub
+    post_url = "#{site_url}#{url_path}"
+    # author: use brad-thompson for story, org for others — simple heuristic
+    is_story = url_path.include?("gatherpack-story")
+    blog_posting = {
+      "title" => post_title,
+      "desc" => post_desc,
+      "pub" => pub,
+      "mod" => mod,
+      "url" => post_url,
+      "is_story" => is_story
+    }
+  end
+%>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://gatherpack.com/#organization",
+      "name": "GatherPack",
+      "url": "https://gatherpack.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://gatherpack.com/images/logo.svg"
+      },
+      "foundingDate": "2014",
+      "sameAs": [
+        "https://facebook.com/gatherpack",
+        "https://twitter.com/trygatherpack",
+        "https://www.youtube.com/channel/UC2oVkJ1qlmSQXex69GhsbRg",
+        "https://www.linkedin.com/showcase/gatherpack",
+        "https://github.com/GatherPack/gatherpack",
+        "https://discord.gg/r3fmNDVn3N"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hello@gatherpack.com",
+        "contactType": "customer support",
+        "url": "https://gatherpack.com/contact/"
+      },
+      "publisher": {
+        "@id": "https://gatherpack.com/#organization"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://gatherpack.com/#software",
+      "name": "GatherPack",
+      "description": "<%= definition.gsub('"', '\"') %>",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "url": "https://gatherpack.com",
+      "isAccessibleForFree": true,
+      "license": "https://github.com/GatherPack/gatherpack/blob/main/LICENSE",
+      "author": { "@id": "https://gatherpack.com/#organization" },
+      "publisher": { "@id": "https://gatherpack.com/#organization" },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Self-Hosted",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "Self-host free under MIT license"
+        },
+        {
+          "@type": "Offer",
+          "name": "Managed Hosting — Standard",
+          "price": "50",
+          "priceCurrency": "USD",
+          "description": "Managed hosting via Sledgehammer Infosystems"
+        },
+        {
+          "@type": "Offer",
+          "name": "Managed Hosting — Custom",
+          "price": "100",
+          "priceCurrency": "USD",
+          "description": "Custom hosting plus plugin development"
+        }
+      ],
+      "featureList": [
+        "Member management, teams, badges",
+        "Event management, RSVPs, time tracking",
+        "Finance tracking, bookkeeping, Stripe payments",
+        "Announcements and messaging",
+        "Automation, reports, actions, hooks"
+      ],
+      "screenshot": [
+        "https://gatherpack.com/images/ss-calendar.png",
+        "https://gatherpack.com/images/ss-directory.png"
+      ]
+    }<% if breadcrumb_items.length > 1 && !is_404 %>,
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        <% breadcrumb_items.each_with_index do |crumb, idx| %>{
+          "@type": "ListItem",
+          "position": <%= idx + 1 %>,
+          "name": "<%= crumb["name"] %>",
+          "item": "<%= crumb["url"] %>"
+        }<%= idx < breadcrumb_items.length - 1 ? "," : "" %><% end %>
+      ]
+    }<% end %><% if is_faq %>,
+    {
+      "@type": "FAQPage",
+      "@id": "https://gatherpack.com/faq/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is GatherPack?",
+          "acceptedAnswer": { "@type": "Answer", "text": "GatherPack is free, open-source group management software for teams, clubs, churches, and nonprofits — members, events, finances, and communications in one place. Self-host free under the MIT license or use affordable managed hosting via Sledgehammer Infosystems." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is GatherPack free?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The software is MIT-licensed and free to self-host on your own server at no license cost. Managed hosting is a separate paid option — Standard $50/mo, Custom $100/mo plus plugins, with a significant discount for FIRST teams." }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is GatherPack for?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Any people-powered group that has outgrown spreadsheets and group chats: FIRST Robotics teams, youth clubs, churches, nonprofits, and sports leagues from 10 to 500 people." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I self-host GatherPack?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Clone https://github.com/GatherPack/gatherpack and run the same software with full data ownership. You handle server, updates, backups, and Stripe setup. Community support via GitHub and Discord." }
+        },
+        {
+          "@type": "Question",
+          "name": "How does managed hosting work and what does it cost?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sledgehammer Infosystems hosts, updates, backs up, and supports GatherPack including Stripe integration. Standard is $50/mo, Custom is $100/mo plus plugin development. FIRST teams receive a significant discount." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can we switch between self-host and managed?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Both paths run the same open-source software so data stays portable. Start self-hosted and move to managed or vice versa." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does GatherPack support dues, donations, and payments?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. A ledger with tagged transactions, receipts, and Stripe-powered payments for cards and bank transfers today. Zeffy, PayPal, Venmo and bank-pull imports are on the roadmap." }
+        },
+        {
+          "@type": "Question",
+          "name": "What features are available now vs on the roadmap?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Available now: roster, events, time-clock, ledger with receipts, Stripe, team-scoped announcements, custom reports. On the roadmap: multi-channel messaging, notifications, actions, hooks, Google Calendar sync." }
+        },
+        {
+          "@type": "Question",
+          "name": "Will my calendar sync to Google Calendar?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Not yet. The internal calendar handles RSVPs and shifts; Google Calendar sync is a planned next step listed with dates on the roadmap." }
+        },
+        {
+          "@type": "Question",
+          "name": "How is GatherPack different from TeamConvene?",
+          "acceptedAnswer": { "@type": "Answer", "text": "GatherPack is open source and self-hostable under MIT; TeamConvene is SaaS-only. GatherPack gives data ownership and extensibility via reports, actions, and hooks." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does GatherPack work for FIRST Robotics teams specifically?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. GatherPack started as a FIRST mentor's fix for build-season logistics in 2014 and now handles roster, shop time-clock, fundraising, and competition logistics for FRC/FTC workflows." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do we need to use every feature?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Many groups start with roster and calendar, add finance when dues arrive, and adopt automation later. GatherPack works a la carte or as a full stack." }
+        }
+      ]
+    }<% end %><% if embedded_faq %>,
+    {
+      "@type": "FAQPage",
+      "@id": "<%= site_url %><%= url_path %>#faq",
+      "mainEntity": [
+        <% embedded_faq.each_with_index do |qa, idx| %>{
+          "@type": "Question",
+          "name": "<%= qa["q"].gsub('"', '\"') %>",
+          "acceptedAnswer": { "@type": "Answer", "text": "<%= qa["a"].gsub('"', '\"') %>" }
+        }<%= idx < embedded_faq.length - 1 ? "," : "" %><% end %>
+      ]
+    }<% end %><% if is_about %>,
+    {
+      "@type": "Person",
+      "@id": "https://gatherpack.com/about/#person-brad",
+      "name": "Brad Thompson",
+      "url": "https://brad-thompson.com",
+      "sameAs": ["https://brad-thompson.com"],
+      "jobTitle": "Founder, GatherPack",
+      "affiliation": { "@id": "https://gatherpack.com/#organization" }
+    },
+    {
+      "@type": "AboutPage",
+      "@id": "https://gatherpack.com/about/#aboutpage",
+      "name": "About GatherPack",
+      "url": "https://gatherpack.com/about/",
+      "description": "The GatherPack story: a decade-long predecessor for Westside Robotics, rebuilt by Brad Thompson and students as open-source group management software.",
+      "isPartOf": { "@id": "https://gatherpack.com/#organization" },
+      "about": [{ "@id": "https://gatherpack.com/#software" }, { "@id": "https://gatherpack.com/#organization" }],
+      "author": { "@id": "https://gatherpack.com/about/#person-brad" },
+      "publisher": { "@id": "https://gatherpack.com/#organization" }
+    }<% end %><% if is_features_hub %>,
+    {
+      "@type": "CollectionPage",
+      "@id": "https://gatherpack.com/features/#collection",
+      "name": "Group Management Software Features",
+      "url": "https://gatherpack.com/features/",
+      "description": "Explore GatherPack features: members, events, finance, communication, and automation — all in one open-source platform for teams, clubs, and nonprofits.",
+      "isPartOf": { "@id": "https://gatherpack.com/#organization" }
+    }<% end %><% if is_contact %>,
+    {
+      "@type": "ContactPage",
+      "@id": "https://gatherpack.com/contact/#contactpage",
+      "name": "Contact GatherPack",
+      "url": "https://gatherpack.com/contact/",
+      "description": "Contact GatherPack to get started or schedule a demo. Self-host free or get managed hosting.",
+      "isPartOf": { "@id": "https://gatherpack.com/#organization" }
+    }<% end %><% if is_roadmap %>,
+    {
+      "@type": "CollectionPage",
+      "@id": "https://gatherpack.com/roadmap/#collection",
+      "name": "GatherPack Roadmap",
+      "url": "https://gatherpack.com/roadmap/",
+      "description": "What's available now and what's next for GatherPack. Living, dated roadmap.",
+      "isPartOf": { "@id": "https://gatherpack.com/#organization" }
+    }<% end %><% if is_updates_hub %>,
+    {
+      "@type": "CollectionPage",
+      "@id": "https://gatherpack.com/updates/#collection",
+      "name": "GatherPack Updates",
+      "url": "https://gatherpack.com/updates/",
+      "description": "Follow GatherPack development: roadmap updates, the story, and feature rollouts.",
+      "isPartOf": { "@id": "https://gatherpack.com/#organization" }
+    }<% end %><% if is_feature_pillar %>,
+    {
+      "@type": "WebPage",
+      "@id": "<%= site_url %><%= url_path %>#webpage",
+      "name": "<%= data.title ? data.title.to_s.gsub('"', '\"') : "GatherPack Feature" %>",
+      "url": "<%= site_url %><%= url_path %>",
+      "description": "<%= data.description ? data.description.to_s.gsub('"', '\"').gsub("\n", " ") : definition.gsub('"', '\"') %>",
+      "isPartOf": { "@id": "https://gatherpack.com/features/#collection" },
+      "about": { "@id": "https://gatherpack.com/#software" }
+    }<% end %><% if is_use_case %>,
+    {
+      "@type": "WebPage",
+      "@id": "<%= site_url %><%= url_path %>#webpage",
+      "name": "<%= data.title ? data.title.to_s.gsub('"', '\"') : "GatherPack Use Case" %>",
+      "url": "<%= site_url %><%= url_path %>",
+      "description": "<%= data.description ? data.description.to_s.gsub('"', '\"').gsub("\n", " ") : definition.gsub('"', '\"') %>",
+      "isPartOf": { "@id": "https://gatherpack.com/#organization" },
+      "about": { "@id": "https://gatherpack.com/#software" }
+    }<% end %><% if blog_posting %>,
+    {
+      "@type": "BlogPosting",
+      "@id": "<%= blog_posting["url"] %>#blogposting",
+      "headline": "<%= blog_posting["title"] %>",
+      "description": "<%= blog_posting["desc"] %>",
+      "author": <% if blog_posting["is_story"] %>{ "@type": "Person", "name": "Brad Thompson", "url": "https://brad-thompson.com" }<% else %>{ "@type": "Organization", "name": "GatherPack", "@id": "https://gatherpack.com/#organization" }<% end %>,
+      "publisher": { "@id": "https://gatherpack.com/#organization" },
+      "mainEntityOfPage": "<%= blog_posting["url"] %>",
+      "datePublished": "<%= blog_posting["pub"] %>",
+      "dateModified": "<%= blog_posting["mod"] %>",
+      "isPartOf": { "@id": "https://gatherpack.com/updates/#collection" }
+    }<% end %>
+  ]
+}
+</script>
