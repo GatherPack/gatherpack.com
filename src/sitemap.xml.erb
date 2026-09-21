@@ -1,0 +1,20 @@
+---
+layout: none
+sitemap: false
+---
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<% site.pages.each do |page| %>
+  <% next if page.data.sitemap == false %>
+  <% lastmod = if page.data.last_modified_at
+                page.data.last_modified_at
+              else
+                `git log -1 --pretty="format:%cI" "#{page.path}"`.strip
+              end %>
+  <url>
+    <loc><%= page.url %></loc>
+    <lastmod><%= lastmod %></lastmod>
+    <changefreq><%= page.data.sitemap_change_frequency || "monthly" %></changefreq>
+    <priority><%= page.data.sitemap_priority || "0.5" %></priority>
+  </url>
+<% end %>
+</urlset>
