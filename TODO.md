@@ -156,47 +156,47 @@ sitemap.xml, robots.txt, site.webmanifest (fixed)
 
 **Goal:** Close the craft gap — restructure from flat stack to persuasive arc, surface proof, fix roadmap framing, add visual proof. Interleaves `Backlog #1-7` with foundations from Phase 1.
 
-- [ ] **2.1 Restructure page narrative order** `§2.1` `Backlog #5` `Medium/High`
+- [x] **2.1 Restructure page narrative order** `§2.1` `Backlog #5` `Medium/High`
   - File: `src/index.erb:1-293`
   - Current flat stack: hero → logos → features → community blurb → footer (`AUDIT.md:2.1`).
   - New order: hero (proof-forward + definition from 1.3) → the problem (scattered spreadsheets/sticky notes, keep existing copy `src/index.erb:13-14`) → proof of production use (see 2.2) → feature tour (consistent cards from 1.4) → openness/self-host pillar (see 2.3) → roadmap (reframed, see 2.4) → CTA (see 2.7).
   - Preserve specific human details in story; don't genericize.
 
-- [ ] **2.2 Proof strip near top** `§2.2` `Backlog #1` `Low/High`
+- [x] **2.2 Proof strip near top** `§2.2` `Backlog #1` `Low/High`
   - Files: `src/index.erb:26-40` (current "Trusted by" card at `src/index.erb:26-40`)
   - Current: logos exist but buried; "over the past decade" prose-only (`src/index.erb:264`).
   - Do: Add proof strip in first viewport — e.g. "In production since 2014 (predecessor) / GatherPack since 2024 · Trusted by Westside Robotics & Golden Gate Robotics · 2 orgs live + 6 evaluating" (use conservative numbers until `◐ Needs owner` phone-home data). Pull logos up higher (first viewport or immediately below hero). Add `width`/`height` + `alt` (`AUDIT.md:2.22`).
   - Done when: proof visible without scrolling on desktop; logos link out (`src/index.erb:33,36`).
 
-- [ ] **2.3 Elevate open-source / self-host to top-level pillar** `§2.5` `Backlog #3` `Low-Med/High`
+- [x] **2.3 Elevate open-source / self-host to top-level pillar** `§2.5` `Backlog #3` `Low-Med/High`
   - Files: `src/index.erb:272-286` (currently buried single sentence `src/index.erb:283-284`)
   - Do: Promote to own section/callout on homepage (not a sentence) — near pricing/CTA. Summarize choice: Self-host Free (MIT, `LICENSE.txt`) vs Managed Hosted via Sledgehammer (`$50`/`$100` per §5b). Link to `/open-source` + `/hosting` (Phase 3). Differentiate loudly vs SaaS-only competitor.
   - Done when: self-host decision is findable within 2 scrolls of CTA.
 
-- [ ] **2.4 Reframe "in development" as roadmap section** `§2.4` `Backlog #2` `Low-Med/High`
+- [x] **2.4 Reframe "in development" as roadmap section** `§2.4` `Backlog #2` `Low-Med/High`
   - Files: `src/index.erb:178,188,221,230` badges + footnote `AUDIT.md:2.4`
   - Current: trailing `*` + small-print footnote — reads as apology.
   - Do: Split into distinct visual sections: "Available now" vs "On the roadmap" (confident, intentional). Move "Messaging, Notifications, Actions, Hooks" badges into roadmap treatment; don't hide gaps, frame as active development. Reuse same split on `/features/*` deep dives and `/roadmap` (Phase 4).
   - Done when: no asterisk footnote; roadmap styling consistent with 1.4 card pattern.
 
-- [ ] **2.5 Convert origin story to visual timeline** `§2.9` `Backlog #6` `Medium/Medium`
+- [x] **2.5 Convert origin story to visual timeline** `§2.9` `Backlog #6` `Medium/Medium`
   - Files: `src/index.erb:257-269` (dense 3-paragraph prose)
   - Do: Break into 3–4 step timeline: the problem → the first fix → outgrowing it → GatherPack today. Preserve human specifics (sticky notes, spreadsheets, volunteer dev `src/index.erb:263`, students rebuilding). Link to `/about` (Phase 4) for extended version. Keep warm copy, improve scaffolding.
   - Done when: timeline renders with dates/steps; prose not genericized.
 
-- [ ] **2.6 Add product screenshots per feature** `§2.3` `Backlog #7` `Medium/Med-High`
+- [x] **2.6 Add product screenshots per feature** `§2.3` `Backlog #7` `Medium/Med-High`
   - Files: `src/index.erb:41-240`, `src/images/ss-calendar.png`, `ss-directory.png`
   - Current: zero visual preview; screenshots exist but unused (`AUDIT.md:2.22`).
   - Do: At minimum, add real screenshots per feature section (use `ss-calendar.png`/`ss-directory.png` as seeds; `◐ Needs owner` fresh captures per §5 Q2). Stretch: lightweight guided preview / short screen-capture walkthrough (does not need full sandboxed demo). Ensure `width`/`height` + `loading="lazy"` below fold + `alt`.
   - Done when: each feature pillar has ≥1 screenshot/diagram.
 
-- [ ] **2.7 Lightweight pricing-philosophy blurb** `§2.8` `Backlog #10` `Low/Low` (optional, low priority)
+- [x] **2.7 Lightweight pricing-philosophy blurb** `§2.8` `Backlog #10` `Low/Low` (optional, low priority)
   - Files: `src/index.erb` (new section near CTA)
   - Current: no pricing anywhere (`AUDIT.md:2.8`); competitor also opaque.
   - Do: Short blurb (not full price table if not ready): "Free self-host (MIT) / Affordable hosted tiers via Sledgehammer — standard $50/mo, custom $100/mo + plugins; FIRST teams discounted — contact for current tiers." Link to `/hosting`. Reinforces transparency vs opaque SaaS.
   - Done when: pricing intent query has a citable homepage anchor + dedicated page (Phase 3).
 
-- [ ] **2.8 Heading & semantic hygiene on homepage** `§2.11` `Backlog #11` (cont.)
+- [x] **2.8 Heading & semantic hygiene on homepage** `§2.11` `Backlog #11` (cont.)
   - Files: `src/index.erb:7,27,43` etc., `src/_layouts/default.erb`
   - Do: Exactly one `h1` per page (homepage `h1` is definition, not just `.logoline:7`). Feature grid keeps `h2` per feature group, then `h3`/`h4` without skipped levels. Every section has `id` for anchor linking. Wrap in `<main>`, add `<article>` where appropriate, no JS-only content (see Phase 4 for Tally fallback).
   - Done when: heading outline passes validator; no single `h2` wrapping 5 unrelated features (`src/index.erb:43` old pattern).
