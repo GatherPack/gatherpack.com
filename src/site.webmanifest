@@ -1,1 +1,20 @@
-{"name":"","short_name":"","icons":[{"src":"/android-chrome-192x192.png","sizes":"192x192","type":"image/png"},{"src":"/android-chrome-512x512.png","sizes":"512x512","type":"image/png"}],"theme_color":"#ffffff","background_color":"#ffffff","display":"standalone"}
+{
+  "name": "GatherPack",
+  "short_name": "GatherPack",
+  "description": "GatherPack is free, open-source group management software for teams, clubs, churches and nonprofits — manage members, events, finances and communications in one place. Self-host free or use affordable managed hosting via Sledgehammer Infosystems.",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#6d6753",
+  "background_color": "#403a22",
+  "display": "standalone"
+}

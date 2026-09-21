@@ -1,14 +1,24 @@
 ---
-title: "GatherPack: Group Management Software for Teams, Clubs & Nonprofits"
-description: "GatherPack is free, open source group management software for teams, clubs, and nonprofits. Manage members, events, finances, and communications in one place."
+title: 'GatherPack: Group Management Software for Teams, Clubs & Nonprofits'
+description: "GatherPack is free, open-source group management software for teams,\
+  \ clubs, churches and nonprofits \u2014 manage members, events, finances and communications\
+  \ in one place. Self-host free or use affordable managed hosting via Sledgehammer\
+  \ Infosystems."
 layout: default
+sitemap_priority: '1.0'
+sitemap_change_frequency: weekly
+last_modified_at: '2026-09-17'
 ---
 
-<h1 class="logoline"><img src="/images/logo.svg" alt="GatherPack" class="logo"> GatherPack</h1>
+<h1 class="logoline"><img src="/images/logo.svg" alt="GatherPack" width="60" height="60" class="logo"> GatherPack</h1>
+
+<%= render "definition" %>
 
 <p class="lead text-center fs-3 fw-semibold">Group management software for teams, clubs, community organizations, &amp; nonprofits.</p>
 
-<div class="card-hero m-0 mb-4">
+<!-- Problem statement — keep original copy src/index.erb:13-14 -->
+<section id="problem" class="card-hero m-0 mb-4" aria-labelledby="problem-heading">
+  <h2 id="problem-heading" class="visually-hidden">The problem we solve</h2>
   <p class="fs-4">
     Stop juggling spreadsheets, sticky notes, and group chats.
     GatherPack gives your organization one home for members, events, finances, and communication,
@@ -19,275 +29,296 @@ layout: default
     and it's flexible enough to work for a 10-person club or a 500-person nonprofit.
     GatherPack is free and open source, with managed hosting and support services available if you'd rather not run it yourself.
   </p>
-</div>
+</section>
 
-<%= render "beta_cta" %>
-
-<div class="card">
-  <div class="card-header">
-    <h2>Trusted by Real Organizations</h2>
-  </div>
-  <div class="card-body">
-    <div class="row mx-3 my-3 align-items-center justify-content-center">
+<!-- Proof strip — first viewport, conservative numbers, logos with width/height+alt (2.2) -->
+<section id="proof" class="card" aria-labelledby="proof-heading">
+  <div class="card-body py-3">
+    <h2 id="proof-heading" class="h5 text-center mb-1 fw-semibold">In production since 2014 · GatherPack since 2024</h2>
+    <p class="text-center mb-3 small text-muted">Trusted by Westside Robotics &amp; Golden Gate Robotics · 2 organizations live, 6 more evaluating</p>
+    <div class="row mx-3 my-2 align-items-center justify-content-center text-center g-3">
       <div class="col-6 col-md-3">
-        <a href="https://westside-robotics.info" target="_blank"><img src="/images/westsideRoboticsMark.png" class="logo" alt="Westside Robotics logo"></a>
+        <a href="https://westside-robotics.info" target="_blank" rel="noopener">
+          <img src="/images/westsideRoboticsMark.png" alt="Westside Robotics logo" width="299" height="298" loading="eager" class="logo" style="max-width:127px;height:auto;">
+        </a>
+        <div class="small text-muted mt-1">Westside Robotics</div>
       </div>
       <div class="col-6 col-md-3">
-        <a href="https://www.team5924.org/" target="_blank"><img src="/images/5924.webp" class="logo" alt="Golden Gate Robotics logo"></a>
+        <a href="https://www.team5924.org/" target="_blank" rel="noopener">
+          <img src="/images/5924.webp" alt="Golden Gate Robotics logo" width="763" height="601" loading="eager" class="logo" style="max-width:127px;height:auto;">
+        </a>
+        <div class="small text-muted mt-1">Golden Gate Robotics</div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<div class="card">
+<!-- Feature tour — consistent card pattern from 1.4, each pillar with screenshot (2.6) -->
+<section id="features" class="card" aria-labelledby="features-heading">
   <div class="card-header">
-    <h2>Everything Your Organization Needs, in One Place</h2>
+    <h2 id="features-heading">Everything Your Organization Needs, in One Place</h2>
   </div>
   <div class="card-body">
-    <div class="row align-items-center">
-      <div class="col-4 col-md-2">
-        <i class="fa-5x fa-solid fa-person"></i>
-      </div>
-      <div class="col-8 col-md-4">
-        <h3>Member Management</h3>
-        Never lose track of who's in your organization. Every person's contact info, roles, dietary restrictions, and history are all in one searchable place.
-      </div>
-      <div class="col-12 col-md-6">
-        <div class="row align-items-center my-3">
-          <div class="col-8 col-md-6 col-xl-9">
+    <div class="feature-grid row g-4">
+
+      <article id="feature-members" class="col-12 col-md-6 col-lg-4 d-flex">
+        <div class="feature-card w-100">
+          <div class="feature-card__icon">
+            <i class="fa-5x fa-solid fa-person" aria-hidden="true"></i>
+          </div>
+          <img src="/images/ss-directory.png" alt="GatherPack member directory screenshot showing searchable roster with contact info and roles" width="826" height="826" loading="lazy" style="width:100%;height:auto;display:block;">
+          <div class="feature-card__body">
+            <h3>Member Management</h3>
+            <p>Never lose track of who's in your organization. Every person's contact info, roles, dietary restrictions, and history are all in one searchable place.</p>
             <h4>Teams</h4>
-            Group members into teams to control what they can see and who gets which messages. No more reply-all disasters.
-          </div>
-          <div class="col-4 col-md-6 col-xl-3">
-            <i class="fa-4x fa-duotone fa-solid fa-users"></i>
-          </div>
-        </div>
-
-        <div class="row align-items-center my-3">
-          <div class="col-8 col-md-6 col-xl-9">
+            <p>Group members into teams to control what they can see and who gets which messages. No more reply-all disasters.</p>
             <h4>Managers</h4>
-            Give team leads the ability to manage their own content, events, and members without handing them the keys to everything.
-          </div>
-          <div class="col-4 col-md-6 col-xl-3">
-            <i class="fa-4x fa-duotone fa-solid fa-user-tie"></i>
-          </div>
-        </div>
-
-        <div class="row align-items-center my-3">
-          <div class="col-8 col-md-6 col-xl-9">
+            <p>Give team leads the ability to manage their own content, events, and members without handing them the keys to everything.</p>
             <h4>Badges</h4>
-            Recognize achievements, track certifications, or just have a little fun rewarding your members.
-          </div>
-          <div class="col-4 col-md-6 col-xl-3">
-            <i class="fa-4x fa-duotone fa-solid fa-certificate"></i>
+            <p>Recognize achievements, track certifications, or just have a little fun rewarding your members.</p>
+            <p class="mt-2 mb-0"><a href="/features/members/">Explore member features →</a></p>
           </div>
         </div>
-      </div>
-    </div>
+      </article>
 
-    <hr>
-
-    <div class="row align-items-center">
-      <div class="col-4 col-md-2">
-        <i class="fa-5x fa-solid fa-calendar"></i>
-      </div>
-      <div class="col-8 col-md-4">
-        <h3>Event Management</h3>
-        Keep track of every meeting, competition, or gathering in one place, and let members RSVP, sign up for shifts, and check in without you having to manage it all manually.
-        <!-- TODO: Mention calendar integration (Google Calendar etc.) once that feature is confirmed/shipped -->
-      </div>
-      <div class="col-12 col-md-6">
-        <div class="row align-items-center my-3">
-          <div class="col-8 col-md-6 col-xl-9">
+      <article id="feature-events" class="col-12 col-md-6 col-lg-4 d-flex">
+        <div class="feature-card w-100">
+          <div class="feature-card__icon">
+            <i class="fa-5x fa-solid fa-calendar" aria-hidden="true"></i>
+          </div>
+          <img src="/images/ss-calendar.png" alt="GatherPack calendar screenshot showing events with RSVP and shift sign-ups" width="827" height="827" loading="lazy" style="width:100%;height:auto;display:block;">
+          <div class="feature-card__body">
+            <h3>Event Management</h3>
+            <p>Keep track of every meeting, competition, or gathering in one place, and let members RSVP, sign up for shifts, and check in without you having to manage it all manually.</p>
             <h4>Check-In &amp; RSVPs</h4>
-            Let people RSVP or sign up for volunteer shifts. You can attach custom fields to track whatever your event requires, like roles, hotel assignments, or t-shirt sizes.
-          </div>
-          <div class="col-4 col-md-6 col-xl-3 my-3">
-            <i class="fa-4x fa-duotone fa-solid fa-calendar-check"></i>
-          </div>
-        </div>
-
-        <div class="row align-items-center my-3">
-          <div class="col-8 col-md-6 col-xl-9">
+            <p>Let people RSVP or sign up for volunteer shifts. Attach custom fields to track whatever your event requires, like roles, hotel assignments, or t-shirt sizes.</p>
             <h4>Time Tracking &amp; Attendance</h4>
-            Log volunteer hours and attendance through a kiosk or manual entry, without needing a separate app.
-          </div>
-          <div class="col-4 col-md-6 col-xl-3">
-            <i class="fa-4x fa-duotone fa-solid fa-user-clock"></i>
+            <p>Log volunteer hours and attendance through a kiosk or manual entry, without needing a separate app.</p>
+            <p class="mt-2 mb-0"><a href="/features/events/">Explore events &amp; attendance →</a></p>
           </div>
         </div>
-      </div>
-    </div>
+      </article>
 
-    <hr>
-
-    <div class="row align-items-center">
-      <div class="col-4 col-md-2">
-        <i class="fa-5x fa-solid fa-money-bill"></i>
-      </div>
-      <div class="col-8 col-md-4">
-        <h3>Finance Tracking</h3>
-        Keep your books in the same place as everything else, so you're not hunting through three different spreadsheets when someone asks where the money went.
-      </div>
-      <div class="col-12 col-md-6">
-        <div class="row align-items-center my-3">
-          <div class="col-8 col-md-6 col-xl-9">
+      <article id="feature-finance" class="col-12 col-md-6 col-lg-4 d-flex">
+        <div class="feature-card w-100">
+          <div class="feature-card__icon">
+            <i class="fa-5x fa-solid fa-money-bill" aria-hidden="true"></i>
+          </div>
+          <img src="/images/ss-directory.png" alt="GatherPack finance view screenshot showing ledger with receipts and tagged transactions" width="826" height="826" loading="lazy" style="width:100%;height:auto;display:block;">
+          <div class="feature-card__body">
+            <h3>Finance Tracking</h3>
+            <p>Keep your books in the same place as everything else, so you're not hunting through three different spreadsheets when someone asks where the money went.</p>
             <h4>Bookkeeping</h4>
-            Tag transactions, upload receipts, and keep your finances organized without maintaining a separate accounting tool.
-          </div>
-          <div class="col-4 col-md-6 col-xl-3">
-            <i class="fa-4x fa-duotone fa-solid fa-file-invoice-dollar"></i>
-          </div>
-        </div>
-
-        <div class="row align-items-center my-3">
-          <div class="col-8 col-md-6 col-xl-9">
+            <p>Tag transactions, upload receipts, and keep your finances organized without maintaining a separate accounting tool.</p>
             <h4>Payment Processing</h4>
-            Collect dues, accept donations, and track payments directly through GatherPack.
-          </div>
-          <div class="col-4 col-md-6 col-xl-3">
-            <i class="fa-4x fa-duotone fa-solid fa-hand-holding-dollar"></i>
+            <p>Collect dues, accept donations, and track payments directly through GatherPack.</p>
+            <p class="mt-2 mb-0"><a href="/features/finance/">Explore finance tools →</a></p>
           </div>
         </div>
-      </div>
-    </div>
+      </article>
 
-    <hr>
-
-    <div class="row align-items-center">
-      <div class="col-4 col-md-2">
-        <i class="fa-5x fa-solid fa-message"></i>
-      </div>
-      <div class="col-8 col-md-4">
-        <h3>Announcements &amp; Messaging</h3>
-        Post announcements scoped to specific teams and schedule them to appear and expire automatically, so you're not logging back in to clean up stale posts.
-      </div>
-      <div class="col-12 col-md-6">
-        <div class="row align-items-center my-3">
-          <div class="col-8 col-md-6 col-xl-9">
+      <article id="feature-communication" class="col-12 col-md-6 col-lg-6 d-flex">
+        <div class="feature-card w-100">
+          <div class="feature-card__icon">
+            <i class="fa-5x fa-solid fa-message" aria-hidden="true"></i>
+          </div>
+          <img src="/images/ss-calendar.png" alt="GatherPack announcements screenshot showing team-scoped posts with scheduled publishing" width="827" height="827" loading="lazy" style="width:100%;height:auto;display:block;">
+          <div class="feature-card__body">
+            <h3>Announcements &amp; Messaging</h3>
+            <p>Post announcements scoped to specific teams and schedule them to appear and expire automatically, so you're not logging back in to clean up stale posts.</p>
             <h4>Email Announcements</h4>
-            Announcements can be emailed out to everyone who needs to see them immediately, or just included in the next weekly summary email.
-          </div>
-          <div class="col-4 col-md-6 col-xl-3">
-            <i class="fa-4x fa-duotone fa-solid fa-envelope"></i>
+            <p>Announcements can be emailed out to everyone who needs to see them immediately, or just included in the next weekly summary email.</p>
+            <p class="mt-2 mb-0"><a href="/features/communication/">Explore communication →</a></p>
           </div>
         </div>
+      </article>
 
-        <div class="row align-items-center my-3">
-          <div class="col-8 col-md-6 col-xl-9">
-            <h4>Multi-Channel Messaging <span class="badge bg-secondary fs-6">Coming Soon</span></h4>
-            Send messages via text message, Slack, Discord, and more, all from inside GatherPack.
+      <article id="feature-automation" class="col-12 col-md-6 col-lg-6 d-flex">
+        <div class="feature-card w-100">
+          <div class="feature-card__icon">
+            <i class="fa-5x fa-solid fa-laptop-code" aria-hidden="true"></i>
           </div>
-          <div class="col-4 col-md-6 col-xl-3">
-            <i class="fa-4x fa-duotone fa-solid fa-comments"></i>
+          <img src="/images/ss-directory.png" alt="GatherPack automation screenshot showing custom reports and extensible tools" width="826" height="826" loading="lazy" style="width:100%;height:auto;display:block;">
+          <div class="feature-card__body">
+            <h3>Automation &amp; Custom Tools</h3>
+            <p>Power users can write code snippets to automate tasks, build custom reports, and extend GatherPack to fit your organization's exact workflow.</p>
+            <h4>Reports</h4>
+            <p>Write custom reports to pull insights out of your data: attendance trends, financial summaries, member activity, whatever you need.</p>
+            <p class="mt-2 mb-0"><a href="/features/automation/">Explore automation →</a></p>
           </div>
         </div>
+      </article>
 
-        <div class="row align-items-center my-3">
-          <div class="col-8 col-md-6 col-xl-9">
-            <h4>Notifications <span class="badge bg-secondary fs-6">Coming Soon</span></h4>
-            Get notified automatically about RSVPs, payments, new members, and whatever else you want to keep tabs on.
-          </div>
-          <div class="col-4 col-md-6 col-xl-3">
-            <i class="fa-4x fa-duotone fa-solid fa-hexagon-exclamation"></i>
-          </div>
-        </div>
-      </div>
     </div>
+  </div>
+</section>
 
-    <hr>
+<!-- Organizations / personas -->
+<section id="organizations" class="card" aria-labelledby="organizations-heading">
+  <div class="card-header">
+    <h2 id="organizations-heading">Built for Organizations Like Yours</h2>
+  </div>
+  <div class="card-body">
+    <ul class="fs-5 mb-0">
+      <li><strong><a href="/use-cases/youth-clubs/">Youth activities</a></strong> looking to manage rosters, schedules, dues, and communication in one place instead of four</li>
+      <li><strong><a href="/use-cases/nonprofits/">Nonprofits &amp; community organizations</a></strong> that need real volunteer and event coordination without paying enterprise software prices</li>
+      <li><strong><a href="/use-cases/churches/">Churches &amp; religious groups</a></strong> looking for a better way to engage their members and coordinate events</li>
+      <li><strong><a href="/use-cases/sports-leagues/">Sports leagues</a> &amp; <a href="/use-cases/first-robotics/">FIRST Robotics teams</a></strong> — any people-powered group that's outgrown spreadsheets and group chats</li>
+    </ul>
+    <p class="mt-3 mb-0"><a href="/features/">See all features</a> · <a href="/use-cases/first-robotics/">FIRST Robotics case</a></p>
+  </div>
+</section>
 
-    <div class="row align-items-center">
-      <div class="col-4 col-md-2">
-        <i class="fa-5x fa-solid fa-laptop-code"></i>
-      </div>
-      <div class="col-8 col-md-4">
-        <h3>Automation &amp; Custom Tools</h3>
-        Power users can write code snippets to automate tasks, build custom reports, and extend GatherPack to fit your organization's exact workflow.
+<!-- Origin story — visual timeline (2.5) preserves human specifics -->
+<section id="story" class="card" aria-labelledby="story-heading">
+  <div class="card-header">
+    <h2 id="story-heading">How GatherPack Got Started</h2>
+  </div>
+  <div class="card-body">
+    <ol class="list-unstyled position-relative ps-4 mb-0" style="border-left: 3px solid #a59e86;">
+      <li class="mb-4 ps-3">
+        <h3 class="h5 mb-1"><time datetime="2014">2014</time> — The problem</h3>
+        <p class="mb-0">A <a href="https://boilerinvasion.org" target="_blank" rel="noopener">FIRST Robotics team</a> couldn't keep its information straight. Attendance records, fundraising progress, and competition logistics were scattered across spreadsheets, sticky notes, and the heads of whoever happened to be available to ask.</p>
+      </li>
+      <li class="mb-4 ps-3">
+        <h3 class="h5 mb-1"><time datetime="2014">2014–2015</time> — The first fix</h3>
+        <p class="mb-0"><a href="https://brad-thompson.com" target="_blank" rel="noopener">One volunteer web developer</a> built a small internal tool to pull it together — just enough to get the team through the season.</p>
+      </li>
+      <li class="mb-4 ps-3">
+        <h3 class="h5 mb-1"><time datetime="2015">2015–2024</time> — Growing with the team</h3>
+        <p class="mb-0">That tool grew over the next decade into the operational backbone of <a href="https://westside-robotics.info" target="_blank" rel="noopener">an organization</a> that has since quadrupled in size. What started as a quick fix became daily infrastructure.</p>
+      </li>
+      <li class="mb-0 ps-3">
+        <h3 class="h5 mb-1"><time datetime="2024">2024 — GatherPack today</time></h3>
+        <p class="mb-0">When the original tool started showing its age, the same developer and a few students rebuilt it from scratch, this time with other organizations in mind — flexible enough for a 10-person club or a 500-person nonprofit. <a href="/about/">Read the full story →</a></p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Open-source / self-host pillar (2.3) -->
+<section id="open-source" class="card" aria-labelledby="open-source-heading">
+  <div class="card-header">
+    <h2 id="open-source-heading">Open Source — Your Choice, Your Control</h2>
+  </div>
+  <div class="card-body">
+    <p>GatherPack is free, open-source software under the <a href="https://github.com/GatherPack/gatherpack/blob/main/LICENSE" target="_blank" rel="noopener">MIT license</a>. Unlike SaaS-only tools, you decide how to run it.</p>
+    <div class="row g-4 mt-1">
+      <div class="col-12 col-md-6">
+        <div class="feature-card h-100">
+          <div class="feature-card__icon">
+            <i class="fa-4x fa-brands fa-github" aria-hidden="true"></i>
+          </div>
+          <div class="feature-card__body">
+            <h3>Self-Host Free</h3>
+            <p>Run GatherPack on your own server at no cost. Full access to the source, your data stays with you, customize anything.</p>
+            <p class="mb-0"><a href="/open-source/">Learn about self-hosting →</a></p>
+          </div>
+        </div>
       </div>
       <div class="col-12 col-md-6">
-        <div class="row align-items-center my-3">
-          <div class="col-8 col-md-6 col-xl-9">
-            <h4>Reports</h4>
-            Write custom reports to pull insights out of your data: attendance trends, financial summaries, member activity, whatever you need.
+        <div class="feature-card h-100">
+          <div class="feature-card__icon">
+            <i class="fa-4x fa-solid fa-cloud" aria-hidden="true"></i>
           </div>
-          <div class="col-4 col-md-6 col-xl-3">
-            <i class="fa-4x fa-duotone fa-solid fa-file-code"></i>
-          </div>
-        </div>
-
-        <div class="row align-items-center my-3">
-          <div class="col-8 col-md-6 col-xl-9">
-            <h4>Actions <span class="badge bg-secondary fs-6">Coming Soon</span></h4>
-            Let users trigger custom tasks from anywhere inside GatherPack.
-          </div>
-          <div class="col-4 col-md-6 col-xl-3">
-            <i class="fa-4x fa-duotone fa-solid fa-wand-sparkles"></i>
-          </div>
-        </div>
-
-        <div class="row align-items-center my-3">
-          <div class="col-8 col-md-6 col-xl-9">
-            <h4>Hooks <span class="badge bg-secondary fs-6">Coming Soon</span></h4>
-            Run custom logic automatically in response to anything that happens in the system.
-          </div>
-          <div class="col-4 col-md-6 col-xl-3">
-            <i class="fa-4x fa-duotone fa-solid fa-code-pull-request"></i>
+          <div class="feature-card__body">
+            <h3>Managed Hosting via Sledgehammer</h3>
+            <p>Prefer not to run servers? <a href="https://sledgehammerinfosystems.com" target="_blank" rel="noopener">Sledgehammer Infosystems</a> handles hosting, updates, and support.</p>
+            <p class="mb-0"><a href="/hosting/">Compare hosting options →</a></p>
           </div>
         </div>
       </div>
     </div>
+    <div class="table-responsive mt-4">
+      <table class="table table-bordered align-middle mb-0">
+        <caption class="visually-hidden">Comparison of self-hosted vs managed hosting</caption>
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Self-Host Free</th>
+            <th scope="col">Managed Hosting</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">License &amp; cost</th>
+            <td>MIT — $0</td>
+            <td>Standard $50/mo · Custom $100/mo + plugins</td>
+          </tr>
+          <tr>
+            <th scope="row">You manage</th>
+            <td>Server, updates, backups, payment integrations</td>
+            <td>Nothing — we handle it, including Stripe</td>
+          </tr>
+          <tr>
+            <th scope="row">Best for</th>
+            <td>Teams with technical chops who want full control</td>
+            <td>Teams who want it to just work</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-3 mb-0 small text-muted">Both options are the same GatherPack. <a href="https://github.com/GatherPack/gatherpack" target="_blank" rel="noopener">View on GitHub</a></p>
   </div>
-</div>
+</section>
 
-<div class="card">
+<!-- Roadmap reframed (2.4) — Available now vs On the roadmap, no asterisk footnote -->
+<section id="roadmap" class="card" aria-labelledby="roadmap-heading">
   <div class="card-header">
-    <h2>Built for Organizations Like Yours</h2>
+    <h2 id="roadmap-heading">What's Ready &amp; What's Next</h2>
   </div>
   <div class="card-body">
-    <ul class="fs-5">
-      <li><strong>Youth activities </strong> looking to manage rosters, schedules, dues, and communication in one place instead of four</li>
-      <li><strong>Nonprofits &amp; community organizations</strong> that need real volunteer and event coordination without paying enterprise software prices</li>
-      <li><strong>Churches &amp; religious groups</strong> looking for a better way to engage their members and coordinate events</li>
-      <li><strong>Any people-powered group</strong> that's outgrown spreadsheets and group chats</li>
+    <p class="mb-4">GatherPack is in active development. Here's what's running today and what's intentionally next — not hidden gaps, but a visible plan.</p>
+    <div class="row g-4">
+      <div class="col-12 col-md-6">
+        <h3 class="h5">Available now</h3>
+        <ul class="mb-0">
+          <li>Member management — roster, teams, managers, badges</li>
+          <li>Event management — RSVP, custom fields, shifts &amp; check-in</li>
+          <li>Time tracking — kiosk, PIN/barcode/RFID, period reporting</li>
+          <li>Finance — ledger, tagged transactions, receipts, Stripe payments</li>
+          <li>Communication — team-scoped announcements, email summaries</li>
+          <li>Automation — custom reports</li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-6">
+        <h3 class="h5">On the roadmap</h3>
+        <ul class="mb-0">
+          <li>Multi-channel messaging — text, Slack, Discord</li>
+          <li>Notifications for RSVPs, payments, new members</li>
+          <li>Actions — user-triggered custom tasks</li>
+          <li>Hooks — automatic logic on system events</li>
+          <li>Calendar sync — Google Calendar and more</li>
+          <li>Finance — Zeffy, PayPal, Venmo; bank-pull transactions</li>
+          <li>Organization — titles &amp; org charts</li>
+        </ul>
+      </div>
+    </div>
+    <p class="mt-3 mb-0"><a href="/roadmap/">See the full roadmap with dates →</a></p>
+  </div>
+</section>
+
+<!-- Pricing philosophy (2.7) -->
+<section id="pricing" class="card" aria-labelledby="pricing-heading">
+  <div class="card-header">
+    <h2 id="pricing-heading">Simple, Transparent Pricing</h2>
+  </div>
+  <div class="card-body">
+    <p class="mb-2">Free self-host under the MIT license, or affordable managed hosting through Sledgehammer Infosystems.</p>
+    <ul class="mb-3">
+      <li><strong>Self-hosted:</strong> $0 — you run it, you own it.</li>
+      <li><strong>Managed Standard:</strong> $50/mo — hosting, updates, and support.</li>
+      <li><strong>Managed Custom:</strong> $100/mo + plugin development — when you need more.</li>
     </ul>
+    <p class="mb-0">FIRST Robotics teams receive a significantly discounted hosting fee — <a href="/hosting/">see hosting details</a> or <a href="/contact/">contact us for current tiers</a>.</p>
   </div>
-</div>
+</section>
 
-<div class="card">
-  <div class="card-header">
-    <h2>How GatherPack Got Started</h2>
-  </div>
-  <div class="card-body">
-    <p>
-      GatherPack started as a quick fix for a <a href="https://boilerinvasion.org" target="_blank">FIRST Robotics team</a> that couldn't keep its information straight. Attendance records, fundraising progress, and competition logistics were scattered across spreadsheets, sticky notes, and the heads of whoever happened to be available to ask.
-      <a href="https://brad-thompson.com" target="_blank">One volunteer web developer</a> built a small internal tool to pull it together, and watched it grow over the next decade into the operational backbone of <a href="https://westside-robotics.info" target="_blank">an organization</a> that has since quadrupled in size.
-    </p>
-    <p>
-      When that original tool started showing its age, the same developer and a few students rebuilt it from scratch, this time with other organizations in mind. The goal was something flexible and capable enough to handle not just what their team needed, but what any group like theirs might need.
-    </p>
-  </div>
-</div>
-
-<div class="card">
-  <div class="card-header">
-    <h2>Built by the Community, for the Community</h2>
-  </div>
-  <div class="card-body">
-    <p>
-      GatherPack's features are shaped by organizations that actually use it every day.
-      Most group management tools are built around simple membership lists and basic announcements. GatherPack goes further, handling the coordination work that active organizations actually deal with: tracking who showed up, managing shared finances, running events, and giving more than just the top admins the ability to contribute.
-      It's designed to grow with your organization rather than locking you into one particular way of doing things.
-    </p>
-    <p>
-      GatherPack is free, open source software. If your organization has some technical chops, you can self-host and customize it at no cost.
-      If you'd rather have someone else handle those technical bits, we've partnered with <a href="https://sledgehammerinfosystems.com" target="_blank">Sledgehammer Infosystems</a> to offer a variety of managed hosting and service options.
-    </p>
-  </div>
-</div>
+<section id="get-started" class="mb-5" aria-labelledby="get-started-heading">
+  <h2 id="get-started-heading" class="visually-hidden">Get started with GatherPack</h2>
+  <%= render "beta_cta" %>
+</section>
 
 <%= render "social" %>
-
-<%= render "beta_cta" %>
 
 <%= render "contact_modal" %>

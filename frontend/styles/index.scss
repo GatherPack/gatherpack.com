@@ -33,7 +33,7 @@ $link-color: $greige-darkest;
 @import "bootstrap/images";
 @import "bootstrap/containers";
 @import "bootstrap/grid";
-// @import "bootstrap/tables";
+@import "bootstrap/tables";
 // @import "bootstrap/forms";
 @import "bootstrap/buttons";
 @import "bootstrap/transitions";
@@ -173,7 +173,8 @@ ul {
   }
 }
 
-footer {
+// Legacy footer (non-site-footer fallback) — scoped so site-footer isn't affected
+body > footer:not(.site-footer) {
   @extend .mt-3;
   @extend .py-5;
   @extend .text-center;
@@ -197,4 +198,213 @@ footer {
 
 .social-links a .fa-brands {
   color: #ffffff;
+}
+
+// — Phase 1.4 — Consistent card/section design system —
+// Pattern: icon or screenshot + heading + 1–2 sentence desc
+// Usage: .feature-card for hub/feature grids (homepage + deep-dives)
+// Do NOT use emoji-as-icons / chip lists; keep Font Awesome duotone warmth
+.feature-card {
+  @extend .card;
+  @extend .h-100;
+  border: 1px solid $greige;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  .feature-card__icon {
+    @extend .d-flex;
+    @extend .align-items-center;
+    @extend .justify-content-center;
+    @extend .py-4;
+    background-color: lighten($greige-light, 8%);
+    min-height: 96px;
+
+    i, svg { font-size: 2.75rem; }
+    img { max-height: 120px; width: auto; object-fit: contain; }
+  }
+
+  .feature-card__body {
+    @extend .p-3;
+
+    h3, h4 {
+      font-family: $headings-font-family;
+      color: $greige-darkest;
+      margin-bottom: 0.35rem;
+      line-height: 1.1;
+    }
+
+    p {
+      @extend .mb-0;
+      font-size: 0.95rem;
+      line-height: 1.45;
+      color: $greige-darkest;
+    }
+  }
+}
+
+.feature-grid {
+  @extend .row;
+  @extend .g-4;
+}
+
+// Variant for definition/TL;DR callout — visually distinct from .card-hero default
+.definition-callout {
+  border-left: 4px solid $greige;
+  text-align: left !important;
+
+  p {
+    font-weight: 400;
+  }
+}
+
+// Breadcrumbs styling (Phase 1.5)
+.breadcrumbs {
+  @extend .container;
+  @extend .my-3;
+  font-size: 0.85rem;
+
+  ol {
+    @extend .list-unstyled;
+    @extend .d-flex;
+    @extend .flex-wrap;
+    @extend .gap-1;
+    @extend .mb-0;
+    align-items: center;
+  }
+
+  li + li::before {
+    content: "›";
+    margin: 0 0.4rem;
+    color: $greige-dark;
+  }
+
+  a { color: $greige-darkest; text-decoration: underline; }
+  [aria-current="page"] { font-weight: 600; color: $greige-darkest; }
+}
+
+// Nav styling (Phase 1.5)
+.site-nav {
+  background-color: $greige-darkest;
+  border-bottom: 1px solid $greige-dark;
+
+  .nav-inner {
+    @extend .container;
+    @extend .d-flex;
+    @extend .flex-wrap;
+    @extend .align-items-center;
+    @extend .justify-content-between;
+    @extend .py-2;
+    gap: 0.75rem;
+  }
+
+  .nav-brand {
+    @extend .d-flex;
+    @extend .align-items-center;
+    @extend .gap-2;
+    @extend .text-white;
+    @extend .text-decoration-none;
+    font-family: $headings-font-family;
+    font-size: 1.35rem;
+
+    img { height: 1.5em; width: 1.5em; }
+  }
+
+  .nav-links {
+    @extend .list-unstyled;
+    @extend .d-flex;
+    @extend .flex-wrap;
+    @extend .align-items-center;
+    @extend .gap-3;
+    @extend .mb-0;
+
+    a {
+      color: $greige-lightest;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.92rem;
+
+      &:hover { color: white; text-decoration: underline; }
+    }
+
+    .nav-cta {
+      @extend .btn;
+      @extend .btn-primary;
+      @extend .btn-sm;
+      color: white !important;
+      background-color: $greige-dark;
+      border-color: $greige;
+      &:hover { background-color: lighten($greige-dark, 6%); }
+    }
+  }
+
+  // Simple CSS-only dropdowns
+  .has-dropdown {
+    position: relative;
+
+    .dropdown-menu-custom {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 1000;
+      min-width: 200px;
+      background: $greige-lightest;
+      border: 1px solid $greige;
+      border-radius: 0.35rem;
+      padding: 0.5rem 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+
+      a {
+        display: block;
+        padding: 0.4rem 1rem;
+        color: $greige-darkest !important;
+        font-size: 0.88rem;
+        &:hover { background: $greige-light; }
+      }
+    }
+
+    &:hover .dropdown-menu-custom,
+    &:focus-within .dropdown-menu-custom {
+      display: block;
+    }
+  }
+}
+
+// Footer clusters (Phase 1.5) — layout via explicit Bootstrap classes in HTML
+// (container/row/g-* etc.) so SCSS only adds colors/typography; flex fallback ensures row.
+.site-footer {
+  @extend .mt-5;
+  background-color: $greige-darkest;
+  color: $greige-lightest;
+  font-size: 0.88rem;
+
+  a { color: $greige-light; &:hover { color: white; } }
+
+  .footer-grid {
+    // container/py-5 now in HTML — no @extend needed
+  }
+
+  .footer-clusters {
+    // row/g-4/mb-4 now in HTML — ensure fallback flex if Bootstrap row fails
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .footer-cluster h3 {
+    font-family: $headings-font-family;
+    font-size: 1.05rem;
+    color: white;
+    margin-bottom: 0.6rem;
+  }
+
+  .footer-cluster ul {
+    @extend .list-unstyled;
+    @extend .mb-0;
+    li { margin-bottom: 0.3rem; }
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.15);
+    font-size: 0.78rem;
+  }
 }
