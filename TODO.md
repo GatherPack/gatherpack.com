@@ -287,7 +287,7 @@ sitemap.xml, robots.txt, site.webmanifest (fixed)
 
 **Goal:** Make GatherPack citable by answer engines, not just rankable (`AUDIT.md:§2.20,2.12,2.22`).
 
-- [ ] **5.1 Per-page JSON-LD extensions** `§2.12` `Backlog #12` (cont.) `Low/High`
+- [x] Per-page JSON-LD extensions** `§2.12` `Backlog #12` (cont.) `Low/High`
   - Extend `src/_partials/_json_ld.erb` (1.2):
     - `BreadcrumbList` on all sub-pages
     - `FAQPage` on `/faq` + embedded FAQ JSON-LD on pages with FAQ pairs (pick one consistent pattern)
@@ -295,12 +295,12 @@ sitemap.xml, robots.txt, site.webmanifest (fixed)
     - `Review`/`Testimonial` once quotes available (`◐ Needs owner`)
   - Validate all with Rich Results Test + `validator.schema.org` before launch.
 
-- [ ] **5.2 llms.txt (+ optional llms-full.txt)** `§2.20` `Backlog #21` `Low/High (GEO)`
+- [x] llms.txt (+ optional llms-full.txt)** `§2.20` `Backlog #21` `Low/High (GEO)`
   - New: `src/llms.txt.erb` (copies to `output/llms.txt` as static text), optional `src/llms-full.txt.erb`
   - Content (concise, markdown, no HTML, ~1,500 tokens): definition paragraph (from 1.3), bullet feature list, self-host vs hosted distinction + comparison summary, audience list, links to all hub pages + `https://github.com/GatherPack/gatherpack` + Discord `https://discord.gg/r3fmNDVn3N` + contact, `last updated` date. Must be reachable at `/llms.txt` (and `/llms-full.txt` if added). Add comment pointer in `robots.txt`.
   - Do after hub pages exist so links are real.
 
-- [ ] **5.3 robots.txt — explicit AI bot allows** `§2.20` `Backlog #22` `Low/Medium`
+- [x] robots.txt — explicit AI bot allows** `§2.20` `Backlog #22` `Low/Medium`
   - File: `src/robots.txt:1-4`
   - Current: generic `Allow: /` + `Sitemap` only.
   - Update to:
@@ -321,13 +321,13 @@ sitemap.xml, robots.txt, site.webmanifest (fixed)
     ```
   - Done when: no AI crawler blocked; `robots.txt` tester passes.
 
-- [ ] **5.4 sitemap.xml — accurate, complete** `§2.19,2.20` `Backlog #22` (cont.) `Low/Medium`
+- [x] sitemap.xml — accurate, complete** `§2.19,2.20` `Backlog #22` (cont.) `Low/Medium`
   - File: `src/sitemap.xml.erb` (or `src/sitemap.xml` — check Bridgetown sitemap plugin)
   - Current: enumerates only files matching `/html/i` — 2 docs, orphaned `first-teams` (`AUDIT.md:2.10`).
   - Do: Include all new URLs, use front-matter `modified_time` or Git log date for `lastmod` (not `File.mtime` which is deploy-brittle), add `<priority>`/`<changefreq>` (1.0 for `/`, 0.8 for hubs, 0.6 for leaves). Regenerate on each build.
   - Done when: sitemap valid XML, all pages present, `lastmod` sensible.
 
-- [ ] **5.5 404 + redirects + breadcrumbs** `§2.22` `Backlog #22` (cont.) `Low/Medium`
+- [x] 404 + redirects + breadcrumbs** `§2.22` `Backlog #22` (cont.) `Low/Medium`
   - New: `src/404.erb` — branded, with nav/search/CTA, `noindex` (`AUDIT.md:§7`).
   - Redirects: `first-teams` → `/use-cases/first-robotics` (301), alias `/self-hosting` → `/open-source`, alias `/pricing` → `/hosting`. Use Bridgetown `permalink`/`_redirects` (Netlify) or `bridgetown` config; document.
   - Breadcrumbs: visible on sub-pages + `BreadcrumbList` JSON-LD (from 5.1).
@@ -339,11 +339,11 @@ sitemap.xml, robots.txt, site.webmanifest (fixed)
 
 **Goal:** Image/Perf hygiene + final validators. Can run in parallel with Phases 3–5 once foundations land.
 
-- [ ] **6.1 Media hygiene** `§2.22` `Backlog #24` `Low-Med/Medium`
+- [ ] **6.1 Media hygiene** `§2.22` `Backlog #24` `Low-Med/Medium` (Updated default layout for og:image)
   - Promote `src/images/fb-cover.png` / `x-cover.png` / `logo-cover.svg` to `og:image`/`twitter:image` candidates (1200×630). Current `og:image` is `logo.png:24` undersized.
   - Add explicit `width`/`height` + `loading="lazy"` below fold on all content images; convert screenshots to WebP with fallback + `srcset` responsive; compress `45-degree-fabric-dark.png` background; audit `alt` (descriptive for content, empty for decorative `fa-*` icons). Check `src/index.erb:6,31,35` existing `alt`.
 
-- [ ] **6.2 Performance pass** `§2.22`
+- [ ] **6.2 Performance pass** `§2.22` (In Progress)
   - Audit `src/_layouts/default.erb:37-63` externals: `plausible.io:48`, FontAwesome kit `kit.fontawesome.com:49`, Google Fonts `fonts.googleapis.com:42`, Bootstrap CDN `cdn.jsdelivr.net:63`. Keep but add `preconnect`/`dns-prefetch`, ensure `font-display:swap` (Google Fonts API param). Consider image optimization pipeline (WebP/srcset), CSS/JS minify via `esbuild.config.js`.
 
 - [ ] **6.3 Interactive / guided preview (stretch)** `§2.3` `Backlog #9` `High/Medium`
