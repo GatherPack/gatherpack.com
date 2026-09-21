@@ -339,11 +339,11 @@ sitemap.xml, robots.txt, site.webmanifest (fixed)
 
 **Goal:** Image/Perf hygiene + final validators. Can run in parallel with Phases 3–5 once foundations land.
 
-- [ ] **6.1 Media hygiene** `§2.22` `Backlog #24` `Low-Med/Medium` (Updated default layout for og:image)
+- [x] **6.1 Media hygiene** `§2.22` `Backlog #24` `Low-Med/Medium` (Updated default layout for og:image)
   - Promote `src/images/fb-cover.png` / `x-cover.png` / `logo-cover.svg` to `og:image`/`twitter:image` candidates (1200×630). Current `og:image` is `logo.png:24` undersized.
   - Add explicit `width`/`height` + `loading="lazy"` below fold on all content images; convert screenshots to WebP with fallback + `srcset` responsive; compress `45-degree-fabric-dark.png` background; audit `alt` (descriptive for content, empty for decorative `fa-*` icons). Check `src/index.erb:6,31,35` existing `alt`.
 
-- [ ] **6.2 Performance pass** `§2.22` (In Progress)
+- [x] **6.2 Performance pass** `§2.22` (In Progress)
   - Audit `src/_layouts/default.erb:37-63` externals: `plausible.io:48`, FontAwesome kit `kit.fontawesome.com:49`, Google Fonts `fonts.googleapis.com:42`, Bootstrap CDN `cdn.jsdelivr.net:63`. Keep but add `preconnect`/`dns-prefetch`, ensure `font-display:swap` (Google Fonts API param). Consider image optimization pipeline (WebP/srcset), CSS/JS minify via `esbuild.config.js`.
 
 - [ ] **6.3 Interactive / guided preview (stretch)** `§2.3` `Backlog #9` `High/Medium`

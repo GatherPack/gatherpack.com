@@ -19,7 +19,7 @@ Bridgetown.configure do |config|
 
   template_engine "erb"
 
-  init :"bridgetown-sitemap"
+  # init :"bridgetown-sitemap"
 
   # Other options you might want to investigate:
 
