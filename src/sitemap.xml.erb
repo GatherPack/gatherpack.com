@@ -3,8 +3,9 @@ layout: none
 sitemap: false
 ---
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<% site.pages.each do |page| %>
-  <% next if page.data.sitemap == false %>
+<% site.resources.each do |resource| %>
+  <% next unless resource.path.end_with?('.html') %>
+  <% next if resource.data.sitemap == false %>
   <% lastmod = if page.data.last_modified_at
                 page.data.last_modified_at
               else
